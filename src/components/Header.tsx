@@ -7,7 +7,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-2xl items-center gap-4 px-4 py-4 sm:px-6">
         <Image
-          src="/logo-puc-minas.png"
+          src="/pucmg.png"
           alt="Logo PUC Minas"
           width={48}
           height={48}
