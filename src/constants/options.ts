@@ -1,4 +1,4 @@
-export const ENTRY_YEARS = Array.from({ length: 10 }, (_, i) => 2016 + i);
+export const ENTRY_YEARS = Array.from({ length: 11 }, (_, i) => 2016 + i);
 
 export const SHIFT_OPTIONS = ["Manhã", "Noite"] as const;
 

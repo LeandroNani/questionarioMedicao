@@ -40,18 +40,25 @@ export default function Section1({ data, onChange, errors, isFirstView }: Sectio
           error={errors.entryYear}
         />
         <SelectField
-          id="entry-semester"
-          label="Semestre"
-          value={data.entrySemester}
-          onChange={(v) => onChange({ entrySemester: Number(v) })}
-          options={[
-            { label: "1º semestre", value: 1 },
-            { label: "2º semestre", value: 2 },
-          ]}
-          placeholder="Semestre"
-          error={errors.entrySemester}
+          id="current-period"
+          label="Período mais próximo"
+          value={data.currentPeriod}
+          onChange={(v) => onChange({ currentPeriod: Number(v) })}
+          options={PERIOD_OPTIONS.map((p) => ({ label: `${p}º`, value: p }))}
+          placeholder="Período"
+          error={errors.currentPeriod}
         />
       </div>
+
+      <RadioGroup
+        id="entry-semester"
+        label="Semestre de entrada"
+        value={data.entrySemester === 1 ? "1º Semestre" : data.entrySemester === 2 ? "2º Semestre" : ""}
+        onChange={(v) => onChange({ entrySemester: v === "1º Semestre" ? 1 : 2 })}
+        options={["1º Semestre", "2º Semestre"]}
+        columns={2}
+        error={errors.entrySemester}
+      />
 
       <RadioGroup
         id="shift"
@@ -61,16 +68,6 @@ export default function Section1({ data, onChange, errors, isFirstView }: Sectio
         options={SHIFT_OPTIONS}
         columns={2}
         error={errors.shift}
-      />
-
-      <RadioGroup
-        id="current-period"
-        label="Período mais próximo que está cursando"
-        value={data.currentPeriod !== null ? `${data.currentPeriod}` : ""}
-        onChange={(v) => onChange({ currentPeriod: Number(v) })}
-        options={PERIOD_OPTIONS.map((p) => `${p}`)}
-        columns={3}
-        error={errors.currentPeriod}
       />
 
       <div className="flex flex-col gap-3">
