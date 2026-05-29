@@ -24,7 +24,7 @@ export default function Section2({ data, onChange, errors }: Section2Props) {
 
       <AutocompleteChips
         id="least-interesting-subjects"
-        label="Quais matérias você considera menos interessantes de estudar? (Selecione até 3, em ordem — desconsidere matérias obrigatórias da PUC como Filosofia e Cultura Religiosa)"
+        label="Quais matérias você considera menos interessantes de estudar? (Selecione até 3, em ordem - desconsidere matérias obrigatórias da PUC como Filosofia e Cultura Religiosa)"
         options={MATERIAS}
         selected={data.leastInterestingSubjects}
         onChange={(v) => onChange({ leastInterestingSubjects: v })}

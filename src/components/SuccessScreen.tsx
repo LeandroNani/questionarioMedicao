@@ -48,7 +48,7 @@ export default function SuccessScreen() {
         transition={{ delay: 0.5 }}
         className="mb-8 max-w-md text-sm text-slate-500 leading-relaxed"
       >
-        Suas respostas foram enviadas com sucesso. A pesquisa é 100% anônima —
+        Suas respostas foram enviadas com sucesso. A pesquisa é 100% anônima -
         nenhum dado identificador foi coletado.
       </motion.p>
 

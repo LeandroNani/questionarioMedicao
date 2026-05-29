@@ -1,4 +1,4 @@
-# Questionário — Engenharia de Software PUC Minas
+# Questionário - Engenharia de Software PUC Minas
 
 Aplicação web para coleta de respostas anônimas de alunos de Engenharia de Software da PUC Minas. Formulário multi-etapas com 6 seções, salvo no Supabase.
 

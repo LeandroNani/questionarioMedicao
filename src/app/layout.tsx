@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pesquisa — Engenharia de Software | PUC Minas",
+  title: "Pesquisa - Engenharia de Software | PUC Minas",
   description:
     "Questionário acadêmico para alunos de Engenharia de Software da PUC Minas. Pesquisa anônima sobre disciplinas, ferramentas, carreira e expectativas.",
 };
