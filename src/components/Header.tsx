@@ -11,7 +11,7 @@ export default function Header() {
           alt="Logo PUC Minas"
           width={48}
           height={48}
-          className="h-10 w-auto object-contain sm:h-12"
+          className="h-10 w-auto object-contain brightness-0 sm:h-12"
           priority
         />
         <div className="min-w-0">
