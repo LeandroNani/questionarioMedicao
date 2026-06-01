@@ -149,7 +149,7 @@ export const CURRICULO_4: Record<string, string[]> = {
     "Engenharia de Processos de Software",
     "Filosofia: Antropologia e Ética",
     "Manutenção e Evolução de Software",
-    "Modelagem de Processos de Negócio",
+    "Modelagem de Processos de Negócios",
     "Qualidade de Software",
     "Trabalho de Conclusão de Curso",
   ],
