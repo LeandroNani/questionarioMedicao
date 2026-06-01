@@ -108,10 +108,11 @@ export const TIME_OPTIONS = [
 ] as const;
 
 export const COMPANY_SIZE_OPTIONS = [
-  "Startup (até 50 funcionários)",
-  "Empresa de médio porte (50–500 funcionários)",
-  "Grande empresa (mais de 500 funcionários)",
-  "Multinacional",
+  "Startup / empresa early-stage (independente do tamanho)",
+  "Pequena empresa (até 49 funcionários)",
+  "Média empresa (50 a 499 funcionários)",
+  "Grande empresa / corporação (500 ou mais funcionários)",
+  "Multinacional (sede fora do Brasil)",
   "Prefiro não responder",
 ] as const;
 
