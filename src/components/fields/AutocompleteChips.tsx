@@ -91,7 +91,7 @@ export default function AutocompleteChips({
 
   return (
     <div className="flex flex-col gap-2">
-      <span className="text-sm font-medium text-slate-700">{label}</span>
+      {label && <span className="text-sm font-medium text-slate-700">{label}</span>}
 
       <AnimatePresence mode="popLayout">
         {selected.length > 0 && (
