@@ -31,11 +31,17 @@ export default function AutocompleteChips({
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const normalize = (str: string) =>
+    str
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+
   const filtered = query.trim()
     ? options
         .filter(
           (opt) =>
-            opt.toLowerCase().includes(query.toLowerCase()) &&
+            normalize(opt).includes(normalize(query)) &&
             !selected.includes(opt),
         )
         .slice(0, 8)
