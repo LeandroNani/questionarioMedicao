@@ -29,6 +29,7 @@ export const LANGUAGE_OPTIONS = [
   "Swift",
   "Go",
   "Rust",
+  "Dart / Flutter",
   "Não estou programando atualmente",
   "Outra",
 ] as const;
@@ -45,6 +46,7 @@ export const COMFORTABLE_LANGUAGE_OPTIONS = [
   "Swift",
   "Go",
   "Rust",
+  "Dart / Flutter",
 ] as const;
 
 export const PROFESSIONAL_LEVEL_OPTIONS = [
