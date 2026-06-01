@@ -6,6 +6,7 @@ import {
   WORK_AREA_FLAT_OPTIONS,
   TIME_OPTIONS,
   COMPANY_SIZE_OPTIONS,
+  CURRENT_SALARY_OPTIONS,
 } from "@/constants/options";
 import RadioGroup from "@/components/fields/RadioGroup";
 import TextInput from "@/components/fields/TextInput";
@@ -36,6 +37,7 @@ export default function Section4({ data, onChange, errors }: Section4Props) {
               updates.workArea = "";
               updates.workAreaOther = "";
               updates.companySize = "";
+              updates.currentSalary = "";
             }
             onChange(updates);
           }}
@@ -103,6 +105,17 @@ export default function Section4({ data, onChange, errors }: Section4Props) {
           onChange={(v) => onChange({ companySize: v })}
           options={COMPANY_SIZE_OPTIONS}
           error={errors.companySize}
+        />
+      </ConditionalField>
+
+      <ConditionalField visible={worksInArea}>
+        <RadioGroup
+          id="current-salary"
+          label="Qual é a sua faixa salarial atual? (Salário mensal bruto em R$)"
+          value={data.currentSalary}
+          onChange={(v) => onChange({ currentSalary: v })}
+          options={CURRENT_SALARY_OPTIONS}
+          error={errors.currentSalary}
         />
       </ConditionalField>
     </div>

@@ -27,6 +27,7 @@ CREATE TABLE respostas (
   main_language_other        TEXT,
   comfortable_languages      JSONB DEFAULT '[]',
   comfortable_languages_other TEXT,
+  english_level              TEXT,
 
   -- Seção 4: Carreira
   professional_level       TEXT NOT NULL,
@@ -36,6 +37,7 @@ CREATE TABLE respostas (
   time_in_tech             TEXT NOT NULL,
   time_working_general     TEXT NOT NULL,
   company_size             TEXT,
+  current_salary           TEXT,
 
   -- Seção 5: Expectativas salariais
   salary_after_graduation TEXT NOT NULL,

@@ -19,6 +19,7 @@ import Section5 from "@/components/sections/Section5";
 import Section6 from "@/components/sections/Section6";
 
 const SESSION_KEY = "survey_submitted";
+const STORAGE_KEY = "survey_progress";
 
 function getSectionData(data: SurveyData, sectionIndex: number): Record<string, unknown> {
   switch (sectionIndex) {
@@ -44,6 +45,7 @@ function getSectionData(data: SurveyData, sectionIndex: number): Record<string, 
         mainLanguageOther: data.mainLanguageOther,
         comfortableLanguages: data.comfortableLanguages,
         comfortableLanguagesOther: data.comfortableLanguagesOther,
+        englishLevel: data.englishLevel,
       };
     case 3:
       return {
@@ -54,6 +56,7 @@ function getSectionData(data: SurveyData, sectionIndex: number): Record<string, 
         timeInTech: data.timeInTech,
         timeWorkingGeneral: data.timeWorkingGeneral,
         companySize: data.companySize,
+        currentSalary: data.currentSalary,
       };
     case 4:
       return {
@@ -94,6 +97,7 @@ function buildPayload(data: SurveyData) {
     main_language_other: data.mainLanguage === "Outra" ? data.mainLanguageOther : null,
     comfortable_languages: data.comfortableLanguages,
     comfortable_languages_other: data.comfortableLanguagesOther || null,
+    english_level: data.englishLevel,
 
     professional_level: data.professionalLevel,
     professional_level_other: data.professionalLevel === "Outro" ? data.professionalLevelOther : null,
@@ -102,6 +106,7 @@ function buildPayload(data: SurveyData) {
     time_in_tech: data.timeInTech,
     time_working_general: data.timeWorkingGeneral,
     company_size: data.professionalLevel !== "Não trabalho na área" ? data.companySize : null,
+    current_salary: data.professionalLevel !== "Não trabalho na área" ? (data.currentSalary || null) : null,
 
     salary_after_graduation: data.salaryAfterGraduation,
     salary_5_years: data.salary5Years,
@@ -112,7 +117,19 @@ function buildPayload(data: SurveyData) {
 }
 
 export default function SurveyPage() {
-  const [data, setData] = useState<SurveyData>(INITIAL_SURVEY_DATA);
+  const [data, setData] = useState<SurveyData>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          return { ...INITIAL_SURVEY_DATA, ...JSON.parse(saved) };
+        } catch {
+          localStorage.removeItem(STORAGE_KEY);
+        }
+      }
+    }
+    return INITIAL_SURVEY_DATA;
+  });
   const [currentSection, setCurrentSection] = useState(0);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -126,7 +143,13 @@ export default function SurveyPage() {
   const [direction, setDirection] = useState(1);
 
   const updateData = useCallback((updates: Partial<SurveyData>) => {
-    setData((prev) => ({ ...prev, ...updates }));
+    setData((prev) => {
+      const next = { ...prev, ...updates };
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+      } catch { /* quota exceeded — ignore */ }
+      return next;
+    });
     setErrors((prev) => {
       const next = { ...prev };
       Object.keys(updates).forEach((key) => delete next[key]);
@@ -183,6 +206,7 @@ export default function SurveyPage() {
       if (error) throw error;
 
       sessionStorage.setItem(SESSION_KEY, "true");
+      localStorage.removeItem(STORAGE_KEY);
       setSubmitted(true);
     } catch (err) {
       console.error("Erro ao enviar:", err);

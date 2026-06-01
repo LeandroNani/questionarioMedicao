@@ -15,6 +15,7 @@ export interface SurveyData {
   mainLanguageOther: string;
   comfortableLanguages: string[];
   comfortableLanguagesOther: string;
+  englishLevel: string;
 
   professionalLevel: string;
   professionalLevelOther: string;
@@ -23,6 +24,7 @@ export interface SurveyData {
   timeInTech: string;
   timeWorkingGeneral: string;
   companySize: string;
+  currentSalary: string;
 
   salaryAfterGraduation: string;
   salary5Years: string;
@@ -48,6 +50,7 @@ export const INITIAL_SURVEY_DATA: SurveyData = {
   mainLanguageOther: "",
   comfortableLanguages: [],
   comfortableLanguagesOther: "",
+  englishLevel: "",
 
   professionalLevel: "",
   professionalLevelOther: "",
@@ -56,6 +59,7 @@ export const INITIAL_SURVEY_DATA: SurveyData = {
   timeInTech: "",
   timeWorkingGeneral: "",
   companySize: "",
+  currentSalary: "",
 
   salaryAfterGraduation: "",
   salary5Years: "",
@@ -74,5 +78,5 @@ export const SECTION_TITLES = [
 ] as const;
 
 export const TOTAL_SECTIONS = SECTION_TITLES.length;
-export const TOTAL_QUESTIONS = 19;
+export const TOTAL_QUESTIONS = 21;
 export const ESTIMATED_MINUTES = 6;

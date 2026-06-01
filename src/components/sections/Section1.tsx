@@ -41,7 +41,7 @@ export default function Section1({ data, onChange, errors, isFirstView }: Sectio
         />
         <SelectField
           id="current-period"
-          label="Período mais próximo"
+          label="Período mais próximo que você está"
           value={data.currentPeriod}
           onChange={(v) => onChange({ currentPeriod: Number(v) })}
           options={PERIOD_OPTIONS.map((p) => ({ label: `${p}º`, value: p }))}

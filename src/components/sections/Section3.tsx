@@ -5,6 +5,7 @@ import {
   AI_TOOL_OPTIONS,
   LANGUAGE_OPTIONS,
   COMFORTABLE_LANGUAGE_OPTIONS,
+  ENGLISH_LEVEL_OPTIONS,
 } from "@/constants/options";
 import RadioGroup from "@/components/fields/RadioGroup";
 import CheckboxGroup from "@/components/fields/CheckboxGroup";
@@ -85,6 +86,16 @@ export default function Section3({ data, onChange, errors }: Section3Props) {
           placeholder="Outras linguagens não listadas acima..."
         />
       </div>
+
+      <RadioGroup
+        id="english-level"
+        label="Qual é o seu nível de inglês?"
+        value={data.englishLevel}
+        onChange={(v) => onChange({ englishLevel: v })}
+        options={ENGLISH_LEVEL_OPTIONS}
+        columns={2}
+        error={errors.englishLevel}
+      />
     </div>
   );
 }

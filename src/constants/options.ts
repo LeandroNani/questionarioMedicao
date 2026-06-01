@@ -116,6 +116,24 @@ export const COMPANY_SIZE_OPTIONS = [
   "Prefiro não responder",
 ] as const;
 
+export const ENGLISH_LEVEL_OPTIONS = [
+  "Nenhum",
+  "Básico",
+  "Intermediário",
+  "Avançado",
+  "Fluente",
+] as const;
+
+export const CURRENT_SALARY_OPTIONS = [
+  "Até R$ 500",
+  "R$ 500 – R$ 1.000",
+  "R$ 1.000 – R$ 2.000",
+  "R$ 2.000 – R$ 4.000",
+  "R$ 4.000 – R$ 6.000",
+  "Acima de R$ 6.000",
+  "Prefiro não responder",
+] as const;
+
 export const SALARY_OPTIONS = [
   "Até R$ 3.000",
   "R$ 3.000 – R$ 5.000",

@@ -21,6 +21,7 @@ export const section3Schema = z.object({
   mainLanguageOther: z.string(),
   comfortableLanguages: z.array(z.string()),
   comfortableLanguagesOther: z.string(),
+  englishLevel: z.string().min(1, "Selecione o nível de inglês"),
 }).refine(
   (d) => d.aiTool !== "Outra" || d.aiToolOther.trim().length > 0,
   { message: "Especifique qual IA", path: ["aiToolOther"] },
@@ -37,6 +38,7 @@ export const section4Schema = z.object({
   timeInTech: z.string().min(1, "Selecione o tempo na área"),
   timeWorkingGeneral: z.string().min(1, "Selecione o tempo de trabalho"),
   companySize: z.string(),
+  currentSalary: z.string(),
 }).refine(
   (d) => d.professionalLevel !== "Outro" || d.professionalLevelOther.trim().length > 0,
   { message: "Especifique o nível", path: ["professionalLevelOther"] },
