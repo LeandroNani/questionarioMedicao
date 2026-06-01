@@ -136,4 +136,4 @@ export const CAREER_INTENTION_OPTIONS = [
 ] as const;
 
 export const SHARE_TEXT =
-  "Ei! Estou participando de uma pesquisa acadêmica do curso de Engenharia de Software da PUC Minas, da matéria Medição e Experimentação. São só alguns minutos e ajuda muito o nosso trabalho. Responde aqui: [URL_DO_FORMULARIO]";
+  "Ei! Participei de uma pesquisa acadêmica do curso de Engenharia de Software da PUC Minas, da matéria Medição e Experimentação. São em média 6 minutos pra responder e ajuda muito o nosso trabalho. Responde aqui: https://questionario-medicao.vercel.app/";
