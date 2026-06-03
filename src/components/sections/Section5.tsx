@@ -27,6 +27,7 @@ export default function Section5({ data, onChange, errors }: Section5Props) {
         value={data.salaryAfterGraduation}
         onChange={(v) => onChange({ salaryAfterGraduation: v })}
         options={SALARY_OPTIONS}
+        required
         error={errors.salaryAfterGraduation}
       />
 
@@ -36,6 +37,7 @@ export default function Section5({ data, onChange, errors }: Section5Props) {
         value={data.salary5Years}
         onChange={(v) => onChange({ salary5Years: v })}
         options={SALARY_OPTIONS}
+        required
         error={errors.salary5Years}
       />
 
@@ -45,6 +47,7 @@ export default function Section5({ data, onChange, errors }: Section5Props) {
         value={data.salary10Years}
         onChange={(v) => onChange({ salary10Years: v })}
         options={SALARY_OPTIONS}
+        required
         error={errors.salary10Years}
       />
     </div>

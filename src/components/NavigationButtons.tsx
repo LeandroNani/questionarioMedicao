@@ -9,6 +9,7 @@ interface NavigationButtonsProps {
   onNext: () => void;
   onSubmit: () => void;
   isSubmitting: boolean;
+  canAdvance: boolean;
 }
 
 export default function NavigationButtons({
@@ -17,6 +18,7 @@ export default function NavigationButtons({
   onNext,
   onSubmit,
   isSubmitting,
+  canAdvance,
 }: NavigationButtonsProps) {
   const isFirst = currentSection === 0;
   const isLast = currentSection === TOTAL_SECTIONS - 1;
@@ -74,12 +76,16 @@ export default function NavigationButtons({
       ) : (
         <motion.button
           type="button"
-          whileTap={{ scale: 0.97 }}
+          whileTap={canAdvance ? { scale: 0.97 } : {}}
           onClick={onNext}
-          className="flex h-12 items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600
-            px-8 text-sm font-medium text-white shadow-md shadow-blue-500/25
-            transition-all duration-200 cursor-pointer
-            hover:from-blue-600 hover:to-blue-700 hover:shadow-lg hover:shadow-blue-500/30"
+          disabled={!canAdvance}
+          className={`flex h-12 items-center gap-2 rounded-xl px-8 text-sm font-medium
+            transition-all duration-200
+            ${
+              canAdvance
+                ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/25 cursor-pointer hover:from-blue-600 hover:to-blue-700 hover:shadow-lg hover:shadow-blue-500/30"
+                : "bg-slate-200 text-slate-400 cursor-not-allowed"
+            }`}
         >
           Próximo
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

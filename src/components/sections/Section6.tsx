@@ -19,6 +19,7 @@ export default function Section6({ data, onChange, errors }: Section6Props) {
         value={data.careerIntention}
         onChange={(v) => onChange({ careerIntention: v })}
         options={CAREER_INTENTION_OPTIONS}
+        required
         error={errors.careerIntention}
       />
     </div>

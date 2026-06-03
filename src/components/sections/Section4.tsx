@@ -42,6 +42,7 @@ export default function Section4({ data, onChange, errors }: Section4Props) {
             onChange(updates);
           }}
           options={PROFESSIONAL_LEVEL_OPTIONS}
+          required
           error={errors.professionalLevel}
         />
         <ConditionalField visible={data.professionalLevel === "Outro"}>
@@ -85,6 +86,7 @@ export default function Section4({ data, onChange, errors }: Section4Props) {
         value={data.timeInTech}
         onChange={(v) => onChange({ timeInTech: v })}
         options={TIME_OPTIONS}
+        required
         error={errors.timeInTech}
       />
 
@@ -94,6 +96,7 @@ export default function Section4({ data, onChange, errors }: Section4Props) {
         value={data.timeWorkingGeneral}
         onChange={(v) => onChange({ timeWorkingGeneral: v })}
         options={TIME_OPTIONS}
+        required
         error={errors.timeWorkingGeneral}
       />
 

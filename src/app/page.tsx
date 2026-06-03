@@ -178,6 +178,12 @@ export default function SurveyPage() {
     return true;
   };
 
+  const isSectionValid = (): boolean => {
+    const schema = sectionSchemas[currentSection];
+    const sectionData = getSectionData(data, currentSection);
+    return schema.safeParse(sectionData).success;
+  };
+
   const handleNext = () => {
     if (validateCurrentSection()) {
       setDirection(1);
@@ -299,6 +305,7 @@ export default function SurveyPage() {
           onNext={handleNext}
           onSubmit={handleSubmit}
           isSubmitting={isSubmitting}
+          canAdvance={isSectionValid()}
         />
 
         <div className="mt-6 pb-8 text-center text-xs text-slate-400">
