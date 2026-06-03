@@ -8,6 +8,7 @@ interface SelectFieldProps {
   placeholder?: string;
   error?: string;
   id: string;
+  required?: boolean;
 }
 
 export default function SelectField({
@@ -18,11 +19,13 @@ export default function SelectField({
   placeholder = "Selecione...",
   error,
   id,
+  required = false,
 }: SelectFieldProps) {
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={id} className="text-sm font-medium text-slate-700">
         {label}
+        {required && <span className="ml-0.5 text-red-500">*</span>}
       </label>
       <select
         id={id}

@@ -10,6 +10,7 @@ interface RadioGroupProps {
   error?: string;
   id: string;
   columns?: 1 | 2 | 3;
+  required?: boolean;
 }
 
 export default function RadioGroup({
@@ -20,6 +21,7 @@ export default function RadioGroup({
   error,
   id,
   columns = 1,
+  required = false,
 }: RadioGroupProps) {
   const gridClass =
     columns === 3
@@ -30,7 +32,10 @@ export default function RadioGroup({
 
   return (
     <div className="flex flex-col gap-2.5">
-      <span className="text-sm font-medium text-slate-700">{label}</span>
+      <span className="text-sm font-medium text-slate-700">
+        {label}
+        {required && <span className="ml-0.5 text-red-500">*</span>}
+      </span>
       <div className={`grid gap-2 ${gridClass}`}>
         {options.map((option) => {
           const isSelected = value === option;

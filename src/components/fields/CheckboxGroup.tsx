@@ -10,6 +10,7 @@ interface CheckboxGroupProps {
   error?: string;
   id: string;
   columns?: 1 | 2 | 3;
+  required?: boolean;
 }
 
 export default function CheckboxGroup({
@@ -20,6 +21,7 @@ export default function CheckboxGroup({
   error,
   id,
   columns = 2,
+  required = false,
 }: CheckboxGroupProps) {
   const toggle = (option: string) => {
     if (selected.includes(option)) {
@@ -38,7 +40,10 @@ export default function CheckboxGroup({
 
   return (
     <div className="flex flex-col gap-2.5">
-      <span className="text-sm font-medium text-slate-700">{label}</span>
+      <span className="text-sm font-medium text-slate-700">
+        {label}
+        {required && <span className="ml-0.5 text-red-500">*</span>}
+      </span>
       <div className={`grid gap-2 ${gridClass}`}>
         {options.map((option) => {
           const isSelected = selected.includes(option);

@@ -37,6 +37,7 @@ export default function Section1({ data, onChange, errors, isFirstView }: Sectio
           onChange={(v) => onChange({ entryYear: Number(v) })}
           options={ENTRY_YEARS.map((y) => ({ label: String(y), value: y }))}
           placeholder="Ano"
+          required
           error={errors.entryYear}
         />
         <SelectField
@@ -46,6 +47,7 @@ export default function Section1({ data, onChange, errors, isFirstView }: Sectio
           onChange={(v) => onChange({ currentPeriod: Number(v) })}
           options={PERIOD_OPTIONS.map((p) => ({ label: `${p}º`, value: p }))}
           placeholder="Período"
+          required
           error={errors.currentPeriod}
         />
       </div>
@@ -57,6 +59,7 @@ export default function Section1({ data, onChange, errors, isFirstView }: Sectio
         onChange={(v) => onChange({ entrySemester: v === "1º Semestre" ? 1 : 2 })}
         options={["1º Semestre", "2º Semestre"]}
         columns={2}
+        required
         error={errors.entrySemester}
       />
 
@@ -67,6 +70,7 @@ export default function Section1({ data, onChange, errors, isFirstView }: Sectio
         onChange={(v) => onChange({ shift: v })}
         options={SHIFT_OPTIONS}
         columns={2}
+        required
         error={errors.shift}
       />
 
@@ -78,6 +82,7 @@ export default function Section1({ data, onChange, errors, isFirstView }: Sectio
           onChange={(v) => onChange({ academicStatus: v })}
           options={ACADEMIC_STATUS_OPTIONS}
           columns={2}
+          required
           error={errors.academicStatus}
         />
         <InfoBox>

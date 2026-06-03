@@ -31,6 +31,7 @@ export default function Section3({ data, onChange, errors }: Section3Props) {
           }}
           options={AI_TOOL_OPTIONS}
           columns={2}
+          required
           error={errors.aiTool}
         />
         <ConditionalField visible={data.aiTool === "Outra"}>
@@ -55,6 +56,7 @@ export default function Section3({ data, onChange, errors }: Section3Props) {
           }}
           options={LANGUAGE_OPTIONS}
           columns={2}
+          required
           error={errors.mainLanguage}
         />
         <ConditionalField visible={data.mainLanguage === "Outra"}>
@@ -94,6 +96,7 @@ export default function Section3({ data, onChange, errors }: Section3Props) {
         onChange={(v) => onChange({ englishLevel: v })}
         options={ENGLISH_LEVEL_OPTIONS}
         columns={2}
+        required
         error={errors.englishLevel}
       />
     </div>
