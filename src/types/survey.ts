@@ -79,4 +79,4 @@ export const SECTION_TITLES = [
 
 export const TOTAL_SECTIONS = SECTION_TITLES.length;
 export const TOTAL_QUESTIONS = 21;
-export const ESTIMATED_MINUTES = 6;
+export const ESTIMATED_MINUTES = 5;
