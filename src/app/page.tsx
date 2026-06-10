@@ -76,6 +76,17 @@ function getSectionData(data: SurveyData, sectionIndex: number): Record<string, 
 }
 
 function buildPayload(data: SurveyData) {
+  const mappedMainLanguages = data.mainLanguages.map((lang) =>
+    lang === "Outra" ? data.mainLanguageOther.trim() : lang
+  ).filter(Boolean);
+
+  const aiToolVal = data.aiTool === "Outra" ? data.aiToolOther.trim() : data.aiTool;
+  const mainLanguageVal = mappedMainLanguages[0] ?? null;
+  const professionalLevelVal = data.professionalLevel === "Outro" ? data.professionalLevelOther.trim() : data.professionalLevel;
+  const workAreaVal = data.professionalLevel !== "Não trabalho na área"
+    ? (data.workArea === "Outra" ? data.workAreaOther.trim() : data.workArea)
+    : null;
+
   return {
     entry_year: data.entryYear,
     entry_semester: data.entrySemester,
@@ -93,19 +104,19 @@ function buildPayload(data: SurveyData) {
     most_relevant_subject_2: data.mostRelevantSubjects[1] ?? null,
     most_relevant_subject_3: data.mostRelevantSubjects[2] ?? null,
 
-    ai_tool: data.aiTool,
-    ai_tool_other: data.aiTool === "Outra" ? data.aiToolOther : null,
-    main_language: data.mainLanguages[0] ?? null,
-    main_language_other: data.mainLanguages.includes("Outra") ? data.mainLanguageOther : null,
-    main_languages: data.mainLanguages,
+    ai_tool: aiToolVal,
+    ai_tool_other: data.aiTool === "Outra" ? data.aiToolOther.trim() : null,
+    main_language: mainLanguageVal,
+    main_language_other: data.mainLanguages.includes("Outra") ? data.mainLanguageOther.trim() : null,
+    main_languages: mappedMainLanguages,
     comfortable_languages: data.comfortableLanguages,
     comfortable_languages_other: data.comfortableLanguagesOther || null,
     english_level: data.englishLevel,
 
-    professional_level: data.professionalLevel,
-    professional_level_other: data.professionalLevel === "Outro" ? data.professionalLevelOther : null,
-    work_area: data.professionalLevel !== "Não trabalho na área" ? data.workArea : null,
-    work_area_other: data.workArea === "Outra" ? data.workAreaOther : null,
+    professional_level: professionalLevelVal,
+    professional_level_other: data.professionalLevel === "Outro" ? data.professionalLevelOther.trim() : null,
+    work_area: workAreaVal,
+    work_area_other: data.workArea === "Outra" ? data.workAreaOther.trim() : null,
     time_in_tech: data.timeInTech,
     time_working_general: data.timeWorkingGeneral,
     company_size: data.professionalLevel !== "Não trabalho na área" ? data.companySize : null,
