@@ -2,7 +2,7 @@
 
 export const dynamic = "force-dynamic";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SurveyData, INITIAL_SURVEY_DATA, SECTION_TITLES } from "@/types/survey";
 import { sectionSchemas } from "@/schemas/survey";
@@ -11,6 +11,7 @@ import Header from "@/components/Header";
 import ProgressBar from "@/components/ProgressBar";
 import NavigationButtons from "@/components/NavigationButtons";
 import SuccessScreen from "@/components/SuccessScreen";
+import ConsentModal from "@/components/ConsentModal";
 import Section1 from "@/components/sections/Section1";
 import Section2 from "@/components/sections/Section2";
 import Section3 from "@/components/sections/Section3";
@@ -20,6 +21,7 @@ import Section6 from "@/components/sections/Section6";
 
 const SESSION_KEY = "survey_submitted";
 const STORAGE_KEY = "survey_progress";
+const CONSENT_KEY = "survey_consent";
 
 function getSectionData(data: SurveyData, sectionIndex: number): Record<string, unknown> {
   switch (sectionIndex) {
@@ -117,30 +119,32 @@ function buildPayload(data: SurveyData) {
 }
 
 export default function SurveyPage() {
-  const [data, setData] = useState<SurveyData>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        try {
-          return { ...INITIAL_SURVEY_DATA, ...JSON.parse(saved) };
-        } catch {
-          localStorage.removeItem(STORAGE_KEY);
-        }
-      }
-    }
-    return INITIAL_SURVEY_DATA;
-  });
+  const [data, setData] = useState<SurveyData>(INITIAL_SURVEY_DATA);
   const [currentSection, setCurrentSection] = useState(0);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(() => {
-    if (typeof window !== "undefined") {
-      return sessionStorage.getItem(SESSION_KEY) === "true";
-    }
-    return false;
-  });
+  const [submitted, setSubmitted] = useState(false);
   const [direction, setDirection] = useState(1);
+  const [consentGiven, setConsentGiven] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        setData({ ...INITIAL_SURVEY_DATA, ...JSON.parse(saved) });
+      } catch {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+    if (sessionStorage.getItem(SESSION_KEY) === "true") setSubmitted(true);
+    if (sessionStorage.getItem(CONSENT_KEY) === "true") setConsentGiven(true);
+  }, []);
+
+  const handleConsent = () => {
+    sessionStorage.setItem(CONSENT_KEY, "true");
+    setConsentGiven(true);
+  };
 
   const updateData = useCallback((updates: Partial<SurveyData>) => {
     setData((prev) => {
@@ -243,6 +247,8 @@ export default function SurveyPage() {
 
   return (
     <>
+      {!consentGiven && <ConsentModal onAccept={handleConsent} />}
+      <div className={!consentGiven ? "pointer-events-none select-none" : undefined}>
       <Header />
       <ProgressBar currentSection={currentSection} />
 
@@ -312,6 +318,7 @@ export default function SurveyPage() {
           Suas respostas são 100% anônimas
         </div>
       </main>
+      </div>
     </>
   );
 }

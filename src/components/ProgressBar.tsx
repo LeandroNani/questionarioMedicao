@@ -11,11 +11,11 @@ export default function ProgressBar({ currentSection }: ProgressBarProps) {
 
   return (
     <div className="mx-auto w-full max-w-2xl px-4 pt-6 pb-2 sm:px-6">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-xs font-medium text-slate-500">
+      <div className="flex items-center justify-between mb-2 gap-3">
+        <span className="shrink-0 text-xs font-medium text-slate-500">
           Seção {currentSection + 1} de {SECTION_TITLES.length}
         </span>
-        <span className="text-xs font-medium text-slate-500">
+        <span className="truncate text-right text-xs font-medium text-slate-500">
           {SECTION_TITLES[currentSection]}
         </span>
       </div>

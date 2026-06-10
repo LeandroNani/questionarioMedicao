@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-2xl items-center gap-4 px-4 py-4 sm:px-6">
         <Image
           src="/pucmg.webp"
@@ -15,7 +15,7 @@ export default function Header() {
           priority
         />
         <div className="min-w-0">
-          <h1 className="text-base font-semibold text-slate-800 sm:text-lg">
+          <h1 className="text-sm font-semibold text-slate-800 sm:text-lg">
             Pesquisa - Engenharia de Software
           </h1>
           <p className="text-xs text-slate-500 sm:text-sm truncate">

@@ -105,31 +105,31 @@ export default function AutocompleteChips({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="flex flex-wrap gap-2"
+            className="flex w-full flex-col gap-2"
           >
             {selected.map((item, index) => (
-              <motion.span
+              <motion.div
                 key={item}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-blue-50 border border-blue-200 px-3 py-1.5 text-sm text-blue-700"
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="flex w-full items-center gap-1.5 rounded-lg border border-blue-200 bg-blue-50 px-3 py-1.5 text-sm text-blue-700"
               >
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-xs font-bold text-white">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500 text-xs font-bold text-white">
                   {index + 1}
                 </span>
-                <span className="max-w-[200px] truncate">{item}</span>
+                <span className="min-w-0 flex-1 truncate">{item}</span>
                 <button
                   type="button"
                   onClick={() => removeItem(index)}
-                  className="ml-1 flex h-5 w-5 items-center justify-center rounded-full text-blue-400 hover:bg-blue-100 hover:text-blue-600 transition-colors cursor-pointer"
+                  className="ml-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-blue-400 hover:bg-blue-100 hover:text-blue-600 transition-colors cursor-pointer"
                   aria-label={`Remover ${item}`}
                 >
                   <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
-              </motion.span>
+              </motion.div>
             ))}
           </motion.div>
         )}

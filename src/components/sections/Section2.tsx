@@ -33,7 +33,7 @@ export default function Section2({ data, onChange, errors }: Section2Props) {
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-2">
-        <div className="flex items-end justify-between gap-2">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-2">
           <span className="text-sm font-medium text-slate-700">
             Quais foram as matérias mais difíceis que você cursou até agora? (Selecione até 3, em ordem)
           </span>
@@ -50,7 +50,7 @@ export default function Section2({ data, onChange, errors }: Section2Props) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <div className="flex items-end justify-between gap-2">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-2">
           <span className="text-sm font-medium text-slate-700">
             Quais matérias você considera menos interessantes de estudar? (Selecione até 3, em ordem - desconsidere matérias obrigatórias da PUC como Filosofia e Cultura Religiosa)
           </span>
@@ -67,7 +67,7 @@ export default function Section2({ data, onChange, errors }: Section2Props) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <div className="flex items-end justify-between gap-2">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-2">
           <span className="text-sm font-medium text-slate-700">
             Quais matérias você considera mais relevantes E mais interessantes para sua formação? (Selecione até 3, em ordem)
           </span>
