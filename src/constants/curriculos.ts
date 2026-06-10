@@ -11,7 +11,6 @@ export const CURRICULO_3: Record<string, string[]> = {
     "Arquitetura de Computadores",
     "Bancos de Dados",
     "Cálculo II",
-    "Filosofia: Razão e Modernidade",
     "Laboratório de Programação Modular",
     "Modelagem de Processos de Negócios",
     "Programação Modular",
@@ -19,7 +18,6 @@ export const CURRICULO_3: Record<string, string[]> = {
   ],
   "3º Período": [
     "Algoritmos e Estruturas de Dados II",
-    "Cultura Religiosa: Fenômeno Religioso",
     "Engenharia de Requisitos de Software",
     "Introdução à Pesquisa em Informática",
     "Sistemas Operacionais",
@@ -36,7 +34,6 @@ export const CURRICULO_3: Record<string, string[]> = {
   ],
   "5º Período": [
     "Arquitetura de Software",
-    "Cultura Religiosa: Pessoa e Sociedade",
     "Desenvolvimento de Aplicações Móveis e Distribuídas",
     "Estatística e Probabilidade",
     "Fundamentos de Projeto e Análise de Algoritmos",
@@ -57,7 +54,6 @@ export const CURRICULO_3: Record<string, string[]> = {
   "7º Período": [
     "Computadores e Sociedade",
     "Engenharia de Processos e Qualidade de Software",
-    "Filosofia: Antropologia e Ética",
     "Gestão da Produção de Software",
     "Tecnologias da Informação e do Conhecimento",
     "Tópicos em Computação I",
@@ -78,7 +74,6 @@ export const CURRICULO_4: Record<string, string[]> = {
   "1º Período": [
     "Computabilidade",
     "Desenvolvimento de Interfaces Web",
-    "Filosofia: Lógica e Pensamento Crítico",
     "Fundamentos de Engenharia de Software",
     "Introdução à Algoritmos",
     "Introdução à Computação",
@@ -134,7 +129,6 @@ export const CURRICULO_4: Record<string, string[]> = {
     "Trabalho Interdisciplinar: Engenharia de Arquiteturas Avançadas",
   ],
   "7º Período": [
-    "Cultura Religiosa: Saberes e Tradições",
     "Design de Interação e Experiência de Usuário",
     "Medição e Experimentação em Engenharia de Software",
     "Métodos Formais em Engenharia de Software",
@@ -145,9 +139,7 @@ export const CURRICULO_4: Record<string, string[]> = {
   ],
   "8º Período": [
     "Cidadania e Responsabilidade Social",
-    "Cultura Religiosa: Humanismo, Sociedade e Ecologia Integral",
     "Engenharia de Processos de Software",
-    "Filosofia: Antropologia e Ética",
     "Manutenção e Evolução de Software",
     "Modelagem de Processos de Negócios",
     "Qualidade de Software",
