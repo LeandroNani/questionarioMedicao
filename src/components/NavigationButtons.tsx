@@ -47,14 +47,18 @@ export default function NavigationButtons({
       {isLast ? (
         <motion.button
           type="button"
-          whileTap={{ scale: 0.97 }}
+          whileTap={canAdvance && !isSubmitting ? { scale: 0.97 } : {}}
           onClick={onSubmit}
-          disabled={isSubmitting}
-          className="flex h-12 items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600
-            px-8 text-sm font-medium text-white shadow-md shadow-blue-500/25
-            transition-all duration-200 cursor-pointer
-            hover:from-blue-600 hover:to-blue-700 hover:shadow-lg hover:shadow-blue-500/30
-            disabled:opacity-60 disabled:cursor-not-allowed"
+          disabled={isSubmitting || !canAdvance}
+          className={`flex h-12 items-center gap-2 rounded-xl px-8 text-sm font-medium
+            transition-all duration-200
+            ${
+              isSubmitting
+                ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white opacity-60 cursor-not-allowed"
+                : canAdvance
+                  ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/25 cursor-pointer hover:from-blue-600 hover:to-blue-700 hover:shadow-lg hover:shadow-blue-500/30"
+                  : "bg-slate-200 text-slate-400 cursor-not-allowed"
+            }`}
         >
           {isSubmitting ? (
             <>

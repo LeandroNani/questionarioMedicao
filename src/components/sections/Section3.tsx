@@ -3,7 +3,7 @@
 import { SurveyData } from "@/types/survey";
 import {
   AI_TOOL_OPTIONS,
-  LANGUAGE_OPTIONS,
+  MAIN_LANGUAGES_OPTIONS,
   COMFORTABLE_LANGUAGE_OPTIONS,
   ENGLISH_LEVEL_OPTIONS,
 } from "@/constants/options";
@@ -47,22 +47,25 @@ export default function Section3({ data, onChange, errors }: Section3Props) {
       </div>
 
       <div className="flex flex-col gap-3">
-        <RadioGroup
-          id="main-language"
-          label="Qual linguagem de programação você mais utiliza atualmente?"
-          value={data.mainLanguage}
+        <CheckboxGroup
+          id="main-languages"
+          label="Quais linguagens de programação você utiliza atualmente?"
+          selected={data.mainLanguages}
           onChange={(v) => {
-            onChange({ mainLanguage: v, mainLanguageOther: v === "Outra" ? data.mainLanguageOther : "" });
+            onChange({
+              mainLanguages: v,
+              mainLanguageOther: v.includes("Outra") ? data.mainLanguageOther : "",
+            });
           }}
-          options={LANGUAGE_OPTIONS}
+          options={MAIN_LANGUAGES_OPTIONS}
           columns={2}
           required
-          error={errors.mainLanguage}
+          error={errors.mainLanguages}
         />
-        <ConditionalField visible={data.mainLanguage === "Outra"}>
+        <ConditionalField visible={data.mainLanguages.includes("Outra")}>
           <TextInput
             id="main-language-other"
-            label="Qual linguagem?"
+            label="Qual outra linguagem?"
             value={data.mainLanguageOther}
             onChange={(v) => onChange({ mainLanguageOther: v })}
             placeholder="Digite o nome da linguagem..."

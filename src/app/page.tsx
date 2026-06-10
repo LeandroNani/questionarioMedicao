@@ -2,7 +2,7 @@
 
 export const dynamic = "force-dynamic";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SurveyData, INITIAL_SURVEY_DATA, SECTION_TITLES } from "@/types/survey";
 import { sectionSchemas } from "@/schemas/survey";
@@ -43,7 +43,7 @@ function getSectionData(data: SurveyData, sectionIndex: number): Record<string, 
       return {
         aiTool: data.aiTool,
         aiToolOther: data.aiToolOther,
-        mainLanguage: data.mainLanguage,
+        mainLanguages: data.mainLanguages,
         mainLanguageOther: data.mainLanguageOther,
         comfortableLanguages: data.comfortableLanguages,
         comfortableLanguagesOther: data.comfortableLanguagesOther,
@@ -95,8 +95,9 @@ function buildPayload(data: SurveyData) {
 
     ai_tool: data.aiTool,
     ai_tool_other: data.aiTool === "Outra" ? data.aiToolOther : null,
-    main_language: data.mainLanguage,
-    main_language_other: data.mainLanguage === "Outra" ? data.mainLanguageOther : null,
+    main_language: data.mainLanguages[0] ?? null,
+    main_language_other: data.mainLanguages.includes("Outra") ? data.mainLanguageOther : null,
+    main_languages: data.mainLanguages,
     comfortable_languages: data.comfortableLanguages,
     comfortable_languages_other: data.comfortableLanguagesOther || null,
     english_level: data.englishLevel,
@@ -119,27 +120,29 @@ function buildPayload(data: SurveyData) {
 }
 
 export default function SurveyPage() {
-  const [data, setData] = useState<SurveyData>(INITIAL_SURVEY_DATA);
-  const [currentSection, setCurrentSection] = useState(0);
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(false);
-  const [direction, setDirection] = useState(1);
-  const [consentGiven, setConsentGiven] = useState(false);
-
-  useEffect(() => {
+  const [data, setData] = useState<SurveyData>(() => {
+    if (typeof window === "undefined") return INITIAL_SURVEY_DATA;
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       try {
-        setData({ ...INITIAL_SURVEY_DATA, ...JSON.parse(saved) });
+        return { ...INITIAL_SURVEY_DATA, ...JSON.parse(saved) };
       } catch {
         localStorage.removeItem(STORAGE_KEY);
       }
     }
-    if (sessionStorage.getItem(SESSION_KEY) === "true") setSubmitted(true);
-    if (sessionStorage.getItem(CONSENT_KEY) === "true") setConsentGiven(true);
-  }, []);
+    return INITIAL_SURVEY_DATA;
+  });
+  const [currentSection, setCurrentSection] = useState(0);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(() =>
+    typeof window !== "undefined" && sessionStorage.getItem(SESSION_KEY) === "true"
+  );
+  const [direction, setDirection] = useState(1);
+  const [consentGiven, setConsentGiven] = useState(() =>
+    typeof window !== "undefined" && sessionStorage.getItem(CONSENT_KEY) === "true"
+  );
 
   const handleConsent = () => {
     sessionStorage.setItem(CONSENT_KEY, "true");
