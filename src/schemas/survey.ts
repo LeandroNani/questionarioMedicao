@@ -17,7 +17,7 @@ export const section2Schema = z.object({
 export const section3Schema = z.object({
   aiTool: z.string().min(1, "Selecione uma opção"),
   aiToolOther: z.string(),
-  mainLanguage: z.string().min(1, "Selecione uma linguagem"),
+  mainLanguages: z.array(z.string()).min(1, "Selecione ao menos uma linguagem"),
   mainLanguageOther: z.string(),
   comfortableLanguages: z.array(z.string()),
   comfortableLanguagesOther: z.string(),
@@ -26,7 +26,7 @@ export const section3Schema = z.object({
   (d) => d.aiTool !== "Outra" || d.aiToolOther.trim().length > 0,
   { message: "Especifique qual IA", path: ["aiToolOther"] },
 ).refine(
-  (d) => d.mainLanguage !== "Outra" || d.mainLanguageOther.trim().length > 0,
+  (d) => !d.mainLanguages.includes("Outra") || d.mainLanguageOther.trim().length > 0,
   { message: "Especifique qual linguagem", path: ["mainLanguageOther"] },
 );
 

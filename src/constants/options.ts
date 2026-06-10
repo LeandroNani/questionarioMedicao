@@ -49,6 +49,11 @@ export const COMFORTABLE_LANGUAGE_OPTIONS = [
   "Dart / Flutter",
 ] as const;
 
+export const MAIN_LANGUAGES_OPTIONS = [
+  ...COMFORTABLE_LANGUAGE_OPTIONS,
+  "Outra",
+] as const;
+
 export const PROFESSIONAL_LEVEL_OPTIONS = [
   "Não trabalho na área",
   "Jovem Aprendiz",

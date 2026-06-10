@@ -11,7 +11,7 @@ export interface SurveyData {
 
   aiTool: string;
   aiToolOther: string;
-  mainLanguage: string;
+  mainLanguages: string[];
   mainLanguageOther: string;
   comfortableLanguages: string[];
   comfortableLanguagesOther: string;
@@ -46,7 +46,7 @@ export const INITIAL_SURVEY_DATA: SurveyData = {
 
   aiTool: "",
   aiToolOther: "",
-  mainLanguage: "",
+  mainLanguages: [],
   mainLanguageOther: "",
   comfortableLanguages: [],
   comfortableLanguagesOther: "",
