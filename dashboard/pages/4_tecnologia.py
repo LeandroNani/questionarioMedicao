@@ -8,8 +8,8 @@ from utils.constants import PALETTE_CATEGORICAL, PERIOD_GROUP_ORDER
 df = load_data()
 
 st.header("🛠️ Ferramentas e Linguagens")
-st.caption("RQ5 — Qual é o panorama de adoção de IA?")
-st.caption("RQ6 — Quais linguagens dominam e o repertório cresce com o curso?")
+st.caption("RQ5 - Qual é o panorama de adoção de IA?")
+st.caption("RQ6 - Quais linguagens dominam e o repertório cresce com o curso?")
 
 st.divider()
 
@@ -58,7 +58,7 @@ with col2:
 
 st.divider()
 
-# --- Repertório por período (RQ6 — cruzamento) ---
+# --- Repertório por período (RQ6 - cruzamento) ---
 st.subheader("Repertório de Linguagens por Grupo de Período")
 
 fig = box_plot(
@@ -76,7 +76,7 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 # --- Spearman: período × repertório ---
-st.subheader("📊 Teste de Correlação — Período × Repertório")
+st.subheader("📊 Teste de Correlação - Período × Repertório")
 
 result = spearman_test(df["current_period"], df["n_comfortable_langs"])
 col1, col2, col3 = st.columns(3)

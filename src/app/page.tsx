@@ -165,7 +165,7 @@ export default function SurveyPage() {
       const next = { ...prev, ...updates };
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-      } catch { /* quota exceeded — ignore */ }
+      } catch { /* quota exceeded - ignore */ }
       return next;
     });
     setErrors((prev) => {
@@ -263,75 +263,75 @@ export default function SurveyPage() {
     <>
       {!consentGiven && <ConsentModal onAccept={handleConsent} />}
       <div className={!consentGiven ? "pointer-events-none select-none" : undefined}>
-      <Header />
-      <ProgressBar currentSection={currentSection} />
+        <Header />
+        <ProgressBar currentSection={currentSection} />
 
-      <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-6 sm:px-6">
-        <AnimatePresence mode="wait" custom={direction}>
-          <motion.div
-            key={currentSection}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.25, ease: "easeInOut" }}
-          >
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-              <h2 className="mb-6 text-lg font-semibold text-slate-800">
-                {SECTION_TITLES[currentSection]}
-              </h2>
+        <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-6 sm:px-6">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentSection}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+            >
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+                <h2 className="mb-6 text-lg font-semibold text-slate-800">
+                  {SECTION_TITLES[currentSection]}
+                </h2>
 
-              {currentSection === 0 && (
-                <Section1 data={data} onChange={updateData} errors={errors} isFirstView={true} />
-              )}
-              {currentSection === 1 && (
-                <Section2 data={data} onChange={updateData} errors={errors} />
-              )}
-              {currentSection === 2 && (
-                <Section3 data={data} onChange={updateData} errors={errors} />
-              )}
-              {currentSection === 3 && (
-                <Section4 data={data} onChange={updateData} errors={errors} />
-              )}
-              {currentSection === 4 && (
-                <Section5 data={data} onChange={updateData} errors={errors} />
-              )}
-              {currentSection === 5 && (
-                <Section6 data={data} onChange={updateData} errors={errors} />
-              )}
-            </div>
-          </motion.div>
-        </AnimatePresence>
+                {currentSection === 0 && (
+                  <Section1 data={data} onChange={updateData} errors={errors} isFirstView={true} />
+                )}
+                {currentSection === 1 && (
+                  <Section2 data={data} onChange={updateData} errors={errors} />
+                )}
+                {currentSection === 2 && (
+                  <Section3 data={data} onChange={updateData} errors={errors} />
+                )}
+                {currentSection === 3 && (
+                  <Section4 data={data} onChange={updateData} errors={errors} />
+                )}
+                {currentSection === 4 && (
+                  <Section5 data={data} onChange={updateData} errors={errors} />
+                )}
+                {currentSection === 5 && (
+                  <Section6 data={data} onChange={updateData} errors={errors} />
+                )}
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-        {submitError && (
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-600"
-          >
-            <div className="flex items-center gap-2">
-              <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-              </svg>
-              {submitError}
-            </div>
-          </motion.div>
-        )}
+          {submitError && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-600"
+            >
+              <div className="flex items-center gap-2">
+                <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                </svg>
+                {submitError}
+              </div>
+            </motion.div>
+          )}
 
-        <NavigationButtons
-          currentSection={currentSection}
-          onPrevious={handlePrevious}
-          onNext={handleNext}
-          onSubmit={handleSubmit}
-          isSubmitting={isSubmitting}
-          canAdvance={isSectionValid()}
-        />
+          <NavigationButtons
+            currentSection={currentSection}
+            onPrevious={handlePrevious}
+            onNext={handleNext}
+            onSubmit={handleSubmit}
+            isSubmitting={isSubmitting}
+            canAdvance={isSectionValid()}
+          />
 
-        <div className="mt-6 pb-8 text-center text-xs text-slate-400">
-          Suas respostas são 100% anônimas
-        </div>
-      </main>
+          <div className="mt-6 pb-8 text-center text-xs text-slate-400">
+            Suas respostas são 100% anônimas
+          </div>
+        </main>
       </div>
     </>
   );

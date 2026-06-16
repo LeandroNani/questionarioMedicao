@@ -18,7 +18,7 @@ export default function ConsentModal({ onAccept }: ConsentModalProps) {
         className="relative z-10 w-full max-w-lg overflow-y-auto rounded-t-3xl border-t border-slate-200 bg-white shadow-2xl sm:rounded-2xl sm:border"
         style={{ maxHeight: "92dvh" }}
       >
-        {/* drag handle — mobile only */}
+        {/* drag handle - mobile only */}
         <div className="mx-auto mt-3 h-1 w-10 rounded-full bg-slate-200 sm:hidden" />
 
         <div className="px-5 pb-safe-or-6 pt-5 sm:px-8 sm:pb-8 sm:pt-7">

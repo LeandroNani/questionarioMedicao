@@ -14,14 +14,14 @@ from utils.constants import (
 df = load_data()
 
 st.header("🚀 Expectativas e Carreira")
-st.caption("RQ10 — Expectativas salariais diferem entre quem trabalha e quem não trabalha?")
-st.caption("RQ11 — Alunos no início do curso têm expectativas diferentes dos do final?")
-st.caption("RQ12 — Qual destino profissional é mais desejado?")
+st.caption("RQ10 - Expectativas salariais diferem entre quem trabalha e quem não trabalha?")
+st.caption("RQ11 - Alunos no início do curso têm expectativas diferentes dos do final?")
+st.caption("RQ12 - Qual destino profissional é mais desejado?")
 
 st.divider()
 
 # --- Expectativas Salariais (3 horizontes) ---
-st.subheader("Expectativas Salariais — 3 Horizontes")
+st.subheader("Expectativas Salariais - 3 Horizontes")
 
 salary_cols = {
     "salary_after_graduation": "Pós-formatura",
@@ -80,7 +80,7 @@ for tab, (col, label) in zip(tabs, salary_cols.items()):
 st.divider()
 
 # --- Início vs Fim do curso (RQ11) ---
-st.subheader("📊 Início vs. Fim do Curso — Expectativa Salarial")
+st.subheader("📊 Início vs. Fim do Curso - Expectativa Salarial")
 
 df_inicio = df[df["period_group"] == "Início (P1-P2)"].copy()
 df_fim = df[df["period_group"] == "Fim (P6-P8)"].copy()

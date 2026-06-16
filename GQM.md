@@ -1,4 +1,4 @@
-# GQM — Questionário de Medição: Engenharia de Software PUC Minas
+# GQM - Questionário de Medição: Engenharia de Software PUC Minas
 
 > **Paradigma GQM (Goal-Question-Metric)** aplicado ao questionário de medição e experimentação sobre o perfil acadêmico, tecnológico e profissional dos estudantes de Engenharia de Software da PUC Minas.
 
@@ -18,7 +18,7 @@ Este documento cobre **6 objetivos** derivados das 6 seções do formulário.
 
 ---
 
-## Goal 1 — Caracterizar o Perfil Acadêmico dos Estudantes
+## Goal 1 - Caracterizar o Perfil Acadêmico dos Estudantes
 
 **Objeto:** Estudantes de Engenharia de Software da PUC Minas  
 **Propósito:** Caracterizar  
@@ -51,7 +51,7 @@ Este documento cobre **6 objetivos** derivados das 6 seções do formulário.
 
 ---
 
-## Goal 2 — Avaliar a Percepção dos Estudantes sobre o Currículo
+## Goal 2 - Avaliar a Percepção dos Estudantes sobre o Currículo
 
 **Objeto:** Disciplinas do curso de Engenharia de Software  
 **Propósito:** Avaliar  
@@ -85,7 +85,7 @@ Este documento cobre **6 objetivos** derivados das 6 seções do formulário.
 
 ---
 
-## Goal 3 — Caracterizar o Perfil Tecnológico dos Estudantes
+## Goal 3 - Caracterizar o Perfil Tecnológico dos Estudantes
 
 **Objeto:** Repertório tecnológico dos estudantes (IA, linguagens, inglês)  
 **Propósito:** Caracterizar  
@@ -118,7 +118,7 @@ Este documento cobre **6 objetivos** derivados das 6 seções do formulário.
 
 ---
 
-## Goal 4 — Compreender a Inserção Profissional no Mercado de TI
+## Goal 4 - Compreender a Inserção Profissional no Mercado de TI
 
 **Objeto:** Situação profissional atual dos estudantes  
 **Propósito:** Compreender  
@@ -154,7 +154,7 @@ Este documento cobre **6 objetivos** derivados das 6 seções do formulário.
 
 ---
 
-## Goal 5 — Analisar as Expectativas Salariais dos Estudantes
+## Goal 5 - Analisar as Expectativas Salariais dos Estudantes
 
 **Objeto:** Expectativas financeiras dos estudantes em diferentes horizontes de carreira  
 **Propósito:** Analisar  
@@ -187,7 +187,7 @@ Este documento cobre **6 objetivos** derivados das 6 seções do formulário.
 
 ---
 
-## Goal 6 — Identificar os Planos de Carreira Pós-Graduação
+## Goal 6 - Identificar os Planos de Carreira Pós-Graduação
 
 **Objeto:** Intenções e aspirações profissionais dos estudantes após a conclusão do curso  
 **Propósito:** Identificar  
@@ -203,9 +203,9 @@ Este documento cobre **6 objetivos** derivados das 6 seções do formulário.
 |---|---|---|
 | Q6.1 | Qual é o destino profissional preferido pela maioria dos estudantes? | Com o que você pretende trabalhar ao se formar? |
 | Q6.2 | Qual é a proporção entre intenção de mercado nacional e internacional? | Q6.1 segmentado |
-| Q6.3 | Qual é a taxa de intenção empreendedora? | Q6.1 — opção "Empreender" |
-| Q6.4 | Qual é a proporção de estudantes que pretende seguir carreira pública ou acadêmica? | Q6.1 — opções "Concurso público" e "Carreira acadêmica" |
-| Q6.5 | Qual é a taxa de estudantes sem plano de carreira definido? | Q6.1 — opção "Ainda não sei" |
+| Q6.3 | Qual é a taxa de intenção empreendedora? | Q6.1 - opção "Empreender" |
+| Q6.4 | Qual é a proporção de estudantes que pretende seguir carreira pública ou acadêmica? | Q6.1 - opções "Concurso público" e "Carreira acadêmica" |
+| Q6.5 | Qual é a taxa de estudantes sem plano de carreira definido? | Q6.1 - opção "Ainda não sei" |
 
 ### Métricas
 

@@ -7,7 +7,7 @@ from utils.constants import PALETTE_CATEGORICAL
 df = load_data()
 
 st.header("📈 Regularidade Acadêmica")
-st.caption("RQ2 — A partir de qual período a irregularidade se torna predominante?")
+st.caption("RQ2 - A partir de qual período a irregularidade se torna predominante?")
 
 st.divider()
 
@@ -71,10 +71,10 @@ if first_majority:
     st.info(
         f"A partir do **P{int(first_majority)}**, a taxa de irregularidade ultrapassa 30%, "
         f"sugerindo que a progressão acadêmica se torna mais difícil a partir desse ponto. "
-        f"No **P1**, apenas {irreg_rates[0]:.0f}% são irregulares — o salto é significativo."
+        f"No **P1**, apenas {irreg_rates[0]:.0f}% são irregulares - o salto é significativo."
     )
 else:
-    col2.metric("Irregularidade Expressiva a partir de", "—")
+    col2.metric("Irregularidade Expressiva a partir de", "-")
 
 # --- Tabela detalhada ---
 st.subheader("Dados Detalhados")

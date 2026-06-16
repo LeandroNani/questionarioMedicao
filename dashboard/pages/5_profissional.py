@@ -18,9 +18,9 @@ from utils.constants import (
 df = load_data()
 
 st.header("💼 Perfil Profissional")
-st.caption("RQ7 — Nível de inglês está associado a cargos e salários melhores?")
-st.caption("RQ8 — Qual é o perfil profissional dos que trabalham na área?")
-st.caption("RQ9 — Existe correlação entre período acadêmico e nível profissional?")
+st.caption("RQ7 - Nível de inglês está associado a cargos e salários melhores?")
+st.caption("RQ8 - Qual é o perfil profissional dos que trabalham na área?")
+st.caption("RQ9 - Existe correlação entre período acadêmico e nível profissional?")
 
 st.divider()
 
@@ -127,7 +127,7 @@ with col2:
         st.plotly_chart(fig, use_container_width=True)
 
 # --- Spearman: inglês × salário (RQ7) ---
-st.subheader("📊 Correlação — Inglês × Salário Atual")
+st.subheader("📊 Correlação - Inglês × Salário Atual")
 
 df_salary_test = df_workers.copy()
 df_salary_test["english_ordinal"] = df_salary_test["english_level"].map(ENGLISH_LEVEL_MAP)
@@ -147,7 +147,7 @@ else:
 st.divider()
 
 # --- Spearman: período × nível profissional (RQ9) ---
-st.subheader("📊 Correlação — Período Acadêmico × Nível Profissional")
+st.subheader("📊 Correlação - Período Acadêmico × Nível Profissional")
 
 df_prof_test = df.copy()
 df_prof_test["prof_ordinal"] = df_prof_test["professional_level"].map(PROFESSIONAL_LEVEL_MAP)

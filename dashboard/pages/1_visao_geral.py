@@ -7,7 +7,7 @@ from utils.constants import PALETTE_CATEGORICAL
 df = load_data()
 
 st.header("📊 Visão Geral da Amostra")
-st.caption("RQ1 — Como se distribui a amostra por período, turno e situação acadêmica?")
+st.caption("RQ1 - Como se distribui a amostra por período, turno e situação acadêmica?")
 
 st.divider()
 

@@ -7,8 +7,8 @@ from utils.constants import PERIOD_GROUP_ORDER, PALETTE_CATEGORICAL
 df = load_data()
 
 st.header("📚 Percepção Curricular")
-st.caption("RQ3 — Quais disciplinas são mais difíceis, menos interessantes e mais relevantes?")
-st.caption("RQ4 — Existe sobreposição entre disciplinas difíceis e desinteressantes?")
+st.caption("RQ3 - Quais disciplinas são mais difíceis, menos interessantes e mais relevantes?")
+st.caption("RQ4 - Existe sobreposição entre disciplinas difíceis e desinteressantes?")
 
 st.divider()
 
@@ -27,7 +27,7 @@ else:
 st.info(f"Mostrando dados de **{len(df_filtered)}** respondentes.")
 
 # --- Word Clouds ---
-st.subheader("Nuvens de Palavras — Disciplinas")
+st.subheader("Nuvens de Palavras - Disciplinas")
 
 col1, col2, col3 = st.columns(3)
 
