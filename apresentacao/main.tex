@@ -1,0 +1,734 @@
+\documentclass[fleqn]{beamer}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\usepackage[table]{xcolor}
+\setlength{\arrayrulewidth}{0.4mm}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.2}
+
+\setbeamertemplate{caption}[numbered]
+
+% Beamer theme (mesmo do professor)
+\usetheme{Madrid}
+\usefonttheme[onlysmall]{structurebold}
+\mode<presentation>
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Sumário}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% ==================== METADADOS ====================
+\title[Survey - Eng. Software PUC Minas]{Perfil Acadêmico, Tecnológico e Profissional\\dos Estudantes de Engenharia de Software}
+\subtitle{Survey - Medição e Experimentação}
+\author[Leandro \& Grupo]{Leandro Nani e Grupo}
+\institute[PUC Minas]{Pontifícia Universidade Católica de Minas Gerais\\Departamento de Engenharia de Software}
+\date{Junho 2026}
+
+\begin{document}
+
+% ==================== CAPA ====================
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% ==================== SUMÁRIO ====================
+\begin{frame}{Sumário}
+    \tableofcontents
+\end{frame}
+
+% ============================================================
+\section{Introdução e Metodologia}
+% ============================================================
+
+\begin{frame}{Objetivo do Survey}
+\begin{itemize}
+    \item Caracterizar o perfil dos estudantes de Engenharia de Software da PUC Minas em 6 eixos:
+    \begin{enumerate}
+        \item Perfil acadêmico e regularidade
+        \item Percepção curricular (disciplinas)
+        \item Ferramentas de IA e linguagens de programação
+        \item Inserção profissional no mercado de TI
+        \item Expectativas salariais
+        \item Planos de carreira pós-formatura
+    \end{enumerate}
+    \item Aplicar \textbf{estatística descritiva e inferencial} para identificar correlações, tendências e insights.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Metodologia}
+\begin{block}{Instrumento}
+Questionário online com 6 seções e 20+ perguntas, desenvolvido em Next.js + Supabase.
+\end{block}
+
+\begin{block}{Amostra}
+\textbf{99 respondentes} - períodos P1 a P8, turnos Manhã e Noite.\\
+Coleta: Junho de 2026.
+\end{block}
+
+\begin{block}{Análise}
+\begin{itemize}
+    \item Estatística descritiva: frequências, medianas, distribuições
+    \item Testes inferenciais: Spearman, Mann-Whitney U, Qui-Quadrado
+    \item Visualização: Dashboard interativo em Streamlit + Plotly
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Research Questions}
+\scriptsize{
+\begin{tabular}{cl}
+\toprule
+\textbf{ID} & \textbf{Research Question} \\
+\midrule
+RQ1 & Como se distribui a amostra por período, turno e situação acadêmica? \\
+RQ2 & A partir de qual período a irregularidade se torna predominante? \\
+RQ3 & Quais disciplinas são percebidas como mais difíceis / menos interessantes / mais relevantes? \\
+RQ4 & Existe sobreposição entre disciplinas difíceis e desinteressantes? \\
+RQ5 & Qual é o panorama de adoção de ferramentas de IA? \\
+RQ6 & Quais linguagens dominam e o repertório cresce com o curso? \\
+RQ7 & O nível de inglês está associado a melhores cargos e salários? \\
+RQ8 & Qual é o perfil profissional dos que trabalham na área? \\
+RQ9 & Existe correlação entre período acadêmico e nível profissional? \\
+RQ10 & As expectativas salariais diferem entre quem trabalha e quem não trabalha? \\
+RQ11 & Alunos do início têm expectativas diferentes dos do final do curso? \\
+RQ12 & Qual destino profissional é o mais desejado? \\
+\bottomrule
+\end{tabular}
+}
+\end{frame}
+
+% ============================================================
+\section{Perfil Acadêmico}
+% ============================================================
+
+\begin{frame}{Caracterização da Amostra (RQ1)}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{block}{Visão Geral}
+\begin{itemize}
+    \item \textbf{99} respondentes
+    \item Manhã: \textbf{59} (59,6\%)
+    \item Noite: \textbf{40} (40,4\%)
+    \item Regulares: \textbf{70} (70,7\%)
+    \item Irregulares: \textbf{29} (29,3\%)
+\end{itemize}
+\end{block}
+
+\column{0.48\textwidth}
+\begin{block}{Por Ano de Entrada}
+\begin{itemize}
+    \item 2026: 50 (50,5\%)
+    \item 2023: 24 (24,2\%)
+    \item 2025: 11 (11,1\%)
+    \item 2024: 7 (7,1\%)
+    \item 2019-2022: 7 (7,1\%)
+\end{itemize}
+\end{block}
+\end{columns}
+
+\vspace{0.3cm}
+% [GRÁFICO: Inserir donut chart de respondentes por período]
+\textit{$\rightarrow$ Gráfico: Donut chart de respondentes por período (Dashboard - Visão Geral)}
+\end{frame}
+
+\begin{frame}{Distribuição por Período}
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{crrr}
+\toprule
+\textbf{Período} & \textbf{n} & \textbf{\% do total} & \textbf{Grupo} \\
+\midrule
+P1 & 44 & 44,4\% & \multirow{2}{*}{Início (56,6\%)} \\
+P2 & 12 & 12,1\% & \\
+\midrule
+P3 & 4 & 4,0\% & \multirow{3}{*}{Meio (16,2\%)} \\
+P4 & 2 & 2,0\% & \\
+P5 & 10 & 10,1\% & \\
+\midrule
+P6 & 14 & 14,1\% & \multirow{3}{*}{Fim (27,3\%)} \\
+P7 & 12 & 12,1\% & \\
+P8 & 1 & 1,0\% & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A amostra concentra-se nos extremos: \textbf{56,6\%} no início (P1-P2) e \textbf{27,3\%} no fim (P6-P8).\\
+Períodos intermediários somam apenas 16,2\%.
+\end{frame}
+
+% ============================================================
+\section{Regularidade Acadêmica}
+% ============================================================
+
+\begin{frame}{Evolução da Irregularidade (RQ2)}
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{crrrr}
+\toprule
+\textbf{Período} & \textbf{Total} & \textbf{Regulares} & \textbf{Irregulares} & \textbf{\% Irreg.} \\
+\midrule
+P1 & 44 & 43 & 1 & \cellcolor{green!20}2\% \\
+P2 & 12 & 8 & 4 & \cellcolor{yellow!30}33\% \\
+P3 & 4 & 1 & 3 & \cellcolor{red!30}75\% \\
+P4 & 2 & 1 & 1 & \cellcolor{orange!30}50\% \\
+P5 & 10 & 6 & 4 & \cellcolor{orange!30}40\% \\
+P6 & 14 & 4 & 10 & \cellcolor{red!30}71\% \\
+P7 & 12 & 6 & 6 & \cellcolor{orange!30}50\% \\
+P8 & 1 & 1 & 0 & \cellcolor{green!20}0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% [GRÁFICO: Inserir stacked bar chart 100% + linha de tendência]
+\textit{$\rightarrow$ Gráficos: Stacked bar 100\% e Linha de tendência (Dashboard - Regularidade)}
+\end{frame}
+
+\begin{frame}{Análise da Irregularidade (RQ2)}
+\begin{alertblock}{Salto Abrupto}
+A irregularidade salta de \textbf{2\% (P1)} para \textbf{33\% (P2)} e atinge \textbf{75\% no P3} e \textbf{71\% no P6}.
+\end{alertblock}
+
+\begin{block}{Insights}
+\begin{itemize}
+    \item O \textbf{P1 funciona como filtro}: quase todos ainda estão regulares.
+    \item A partir do \textbf{P2}, uma parcela significativa já acumula dependências.
+    \item No \textbf{P6} (FPAA, Grafos, Estatística), a irregularidade é quase universal.
+    \item \textbf{Sugestão:} apoio pedagógico focado nos períodos P2-P3 para evitar acúmulo em cascata.
+\end{itemize}
+\end{block}
+\end{frame}
+
+% ============================================================
+\section{Percepção Curricular}
+% ============================================================
+
+\begin{frame}{Disciplinas Mais Difíceis (RQ3)}
+\small
+Ranking ponderado: 1ª opção = 3pts, 2ª = 2pts, 3ª = 1pt.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{clr}
+\toprule
+\textbf{\#} & \textbf{Disciplina} & \textbf{Score} \\
+\midrule
+1 & Computabilidade & 113 \\
+2 & Introdução à Algoritmos & 102 \\
+3 & FPAA & 74 \\
+4 & AEDS II & 57 \\
+5 & Cálculo II & 34 \\
+6 & Teoria dos Grafos e Computabilidade & 31 \\
+7 & Desenvolvimento de Interfaces Web & 24 \\
+8 & AEDS I & 22 \\
+9 & Cálculo I & 19 \\
+10 & Introdução à Computação & 17 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+As 4 primeiras posições são de \textbf{algoritmos e teoria da computação}.
+
+% [GRÁFICO: Word Cloud + Bar Chart das disciplinas difíceis]
+\end{frame}
+
+\begin{frame}{Disciplinas Menos Interessantes e Mais Relevantes (RQ3)}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{block}{Menos Interessantes}
+\scriptsize
+\begin{tabular}{lr}
+\toprule
+\textbf{Disciplina} & \textbf{Score} \\
+\midrule
+Intro. à Computação & 48 \\
+Computabilidade & 48 \\
+Desenv. Interfaces Web & 32 \\
+Fund. Eng. Software & 29 \\
+Intro. à Pesquisa & 29 \\
+Modelagem Processos & 28 \\
+\bottomrule
+\end{tabular}
+\end{block}
+
+\column{0.48\textwidth}
+\begin{block}{Mais Relevantes}
+\scriptsize
+\begin{tabular}{lr}
+\toprule
+\textbf{Disciplina} & \textbf{Score} \\
+\midrule
+Intro. à Algoritmos & 104 \\
+Fund. Eng. Software & 61 \\
+AEDS II & 33 \\
+Desenv. Interfaces Web & 31 \\
+AEDS I & 31 \\
+Computabilidade & 29 \\
+\bottomrule
+\end{tabular}
+\end{block}
+\end{columns}
+
+\vspace{0.3cm}
+\textbf{Destaque:} Introdução à Algoritmos é a \textbf{2ª mais difícil} E a \textbf{1ª mais relevante}.\\ Os alunos reconhecem o valor das disciplinas fundamentais mesmo quando desafiadoras.
+\end{frame}
+
+\begin{frame}{Sobreposição: Difíceis $\times$ Desinteressantes (RQ4)}
+
+\textbf{6 disciplinas} aparecem em ambas as listas (top 15):
+
+\begin{enumerate}
+    \item Computabilidade
+    \item Cálculo I
+    \item Desenvolvimento de Interfaces Web
+    \item Introdução à Algoritmos
+    \item Introdução à Computação
+    \item TI: Aplicações Web
+\end{enumerate}
+
+\begin{block}{Interpretação}
+A sobreposição é \textbf{parcial}, indicando que dificuldade e desinteresse são categorias \textbf{correlacionadas mas não idênticas}. Disciplinas como FPAA e AEDS II são difíceis mas \textit{não} desinteressantes - os alunos as percebem como desafiadoras mas valiosas.
+\end{block}
+
+% [GRÁFICO: Diagrama de sobreposição em 3 colunas]
+\end{frame}
+
+% ============================================================
+\section{Ferramentas de IA e Linguagens}
+% ============================================================
+
+\begin{frame}{Adoção de IA (RQ5)}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{lrr}
+\toprule
+\textbf{Ferramenta} & \textbf{n} & \textbf{\%} \\
+\midrule
+Claude & 38 & 38,4\% \\
+ChatGPT & 30 & 30,3\% \\
+Gemini & 25 & 25,3\% \\
+Copilot & 3 & 3,0\% \\
+Outras & 2 & 2,0\% \\
+Não uso & 1 & 1,0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\column{0.48\textwidth}
+\begin{alertblock}{Taxa de Adoção}
+\textbf{99\%} dos estudantes utilizam alguma ferramenta de IA.
+\end{alertblock}
+
+\begin{block}{Destaque}
+\textbf{Claude lidera} com 38,4\%, superando o ChatGPT (30,3\%). O trio Claude-ChatGPT-Gemini concentra 93,9\% do uso.
+\end{block}
+\end{columns}
+
+% [GRÁFICO: Donut chart de IA]
+\end{frame}
+
+\begin{frame}{Linguagens de Programação (RQ6)}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{block}{Utilizadas Atualmente}
+\scriptsize
+\begin{tabular}{lr}
+\toprule
+\textbf{Linguagem} & \textbf{Menções} \\
+\midrule
+Python & 76 \\
+JavaScript & 57 \\
+Java & 24 \\
+TypeScript & 18 \\
+C\# & 11 \\
+C & 9 \\
+C++ & 6 \\
+Dart/Flutter & 5 \\
+Go & 4 \\
+\bottomrule
+\end{tabular}
+\end{block}
+
+\column{0.48\textwidth}
+\begin{block}{Confortáveis}
+\scriptsize
+\begin{tabular}{lr}
+\toprule
+\textbf{Linguagem} & \textbf{Menções} \\
+\midrule
+Python & 72 \\
+JavaScript & 38 \\
+Java & 21 \\
+TypeScript & 17 \\
+C & 13 \\
+C\# & 11 \\
+C++ & 7 \\
+Dart/Flutter & 4 \\
+Go & 3 \\
+\bottomrule
+\end{tabular}
+\end{block}
+\end{columns}
+
+\vspace{0.2cm}
+\textbf{Python domina} em ambas as listas (76,8\% dos respondentes). Média de linguagens confortáveis: \textbf{1,92}.
+\end{frame}
+
+\begin{frame}{Repertório $\times$ Progressão Acadêmica (RQ6)}
+\begin{block}{Teste de Correlação de Spearman}
+\begin{center}
+\begin{tabular}{lll}
+\textbf{Coeficiente ($\rho$)} & \textbf{p-valor} & \textbf{n} \\
+\midrule
+0,361 & 0,0002 & 99 \\
+\end{tabular}
+\end{center}
+\end{block}
+
+\begin{exampleblock}{Resultado}
+Correlação \textbf{moderada positiva} e \textbf{estatisticamente significativa}.\\
+Estudantes em períodos mais avançados tendem a ter um repertório tecnológico mais amplo.
+\end{exampleblock}
+
+% [GRÁFICO: Box plot de nº de linguagens confortáveis por grupo de período]
+\textit{$\rightarrow$ Gráfico: Box plot do repertório por período (Dashboard - Tecnologia)}
+\end{frame}
+
+% ============================================================
+\section{Perfil Profissional e Inglês}
+% ============================================================
+
+\begin{frame}{Inserção no Mercado (RQ8)}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{block}{Situação Profissional}
+\scriptsize
+\begin{tabular}{lr}
+\toprule
+\textbf{Nível} & \textbf{n} \\
+\midrule
+Não trabalha na área & 50 \\
+Estagiário & 23 \\
+Júnior & 14 \\
+Pleno & 5 \\
+Outros & 7 \\
+\bottomrule
+\end{tabular}
+\end{block}
+\textbf{Taxa de empregabilidade: 49,5\%}
+
+\column{0.48\textwidth}
+\begin{block}{Áreas de Atuação (top 5)}
+\scriptsize
+\begin{tabular}{lr}
+\toprule
+\textbf{Área} & \textbf{n} \\
+\midrule
+Full Stack & 17 \\
+Backend & 7 \\
+Machine Learning/IA & 4 \\
+Frontend & 2 \\
+Dados/Data Science & 2 \\
+\bottomrule
+\end{tabular}
+\end{block}
+\end{columns}
+
+\vspace{0.2cm}
+\textbf{Full Stack} domina com 34,7\% dos que trabalham. Machine Learning/IA já é a 3ª área.
+
+% [GRÁFICO: Treemap de áreas de atuação]
+\end{frame}
+
+\begin{frame}{Nível de Inglês (RQ7)}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{lrr}
+\toprule
+\textbf{Nível} & \textbf{n} & \textbf{\%} \\
+\midrule
+Avançado & 31 & 31,3\% \\
+Intermediário & 31 & 31,3\% \\
+Básico & 18 & 18,2\% \\
+Fluente & 17 & 17,2\% \\
+Nenhum & 2 & 2,0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+80\% dos alunos têm nível intermediário ou superior.
+
+\column{0.48\textwidth}
+\begin{block}{Spearman: Inglês $\times$ Salário}
+$\rho = 0,031$, $p = 0,841$ (n=44)\\[0.3cm]
+\textbf{Correlação desprezível e não significativa.} A maioria dos empregados está em nível inicial (estagiário/júnior), onde o salário é determinado pelo tipo de contrato, não pelo inglês.
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Período $\times$ Nível Profissional (RQ9)}
+\begin{block}{Teste de Correlação de Spearman}
+\begin{center}
+\begin{tabular}{lll}
+\textbf{Coeficiente ($\rho$)} & \textbf{p-valor} & \textbf{n} \\
+\midrule
+\textbf{0,714} & $< 0,0001$ & 97 \\
+\end{tabular}
+\end{center}
+\end{block}
+
+\begin{alertblock}{Resultado mais expressivo do survey}
+Correlação \textbf{forte positiva e altamente significativa}.\\
+A progressão acadêmica está \textbf{fortemente alinhada} com a progressão de carreira.
+\end{alertblock}
+
+\begin{itemize}
+    \item P1-P2: predominância de ``Não trabalho na área''
+    \item P5-P6: concentração de Estagiários e Juniores
+    \item P7-P8: presença de Plenos e Sêniores
+\end{itemize}
+
+% [GRÁFICO: Heatmap período × nível profissional]
+\end{frame}
+
+% ============================================================
+\section{Expectativas Salariais}
+% ============================================================
+
+\begin{frame}{Três Horizontes de Expectativa (RQ10)}
+\scriptsize
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Faixa Salarial} & \textbf{Pós-form.} & \textbf{5 anos} & \textbf{10 anos} \\
+\midrule
+Até R\$ 3.000 & 3,0\% & 1,0\% & - \\
+R\$ 3.000 - R\$ 5.000 & 26,3\% & - & - \\
+R\$ 5.000 - R\$ 8.000 & 30,3\% & 9,1\% & 1,0\% \\
+R\$ 8.000 - R\$ 12.000 & 21,2\% & 32,3\% & 6,1\% \\
+R\$ 12.000 - R\$ 18.000 & 3,0\% & 28,3\% & 19,2\% \\
+Acima de R\$ 18.000 & 13,1\% & 28,3\% & \textbf{72,7\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\normalsize
+\begin{block}{Mediana por horizonte}
+Pós-formatura: \textbf{R\$ 6.500} $\rightarrow$ 5 anos: \textbf{R\$ 15.000} $\rightarrow$ 10 anos: \textbf{R\$ 22.000}
+\end{block}
+
+Em 10 anos, \textbf{72,7\%} esperam ganhar acima de R\$ 18.000.
+
+% [GRÁFICO: Grouped bar chart dos 3 horizontes]
+\end{frame}
+
+\begin{frame}{Trabalha vs. Não Trabalha (RQ10)}
+\begin{block}{Teste de Mann-Whitney U}
+\scriptsize
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Horizonte} & \textbf{Med. (trabalha)} & \textbf{Med. (não)} & \textbf{U} & \textbf{p-valor} \\
+\midrule
+Pós-formatura & R\$ 6.500 & R\$ 6.500 & 1262 & 0,4071 \\
+5 anos & R\$ 15.000 & R\$ 15.000 & 1336 & 0,3149 \\
+10 anos & R\$ 22.000 & R\$ 22.000 & 1250 & 0,6487 \\
+\bottomrule
+\end{tabular}
+\end{block}
+
+\begin{exampleblock}{Resultado}
+\textbf{Nenhuma diferença significativa} (p $>$ 0,05 em todos os horizontes).\\
+Quem já trabalha e quem não trabalha têm expectativas \textbf{semelhantes}.\\
+A expectativa parece ser formada pela percepção geral do mercado, não pela experiência individual.
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Início vs. Fim do Curso (RQ11)}
+\small
+\begin{block}{Mann-Whitney U: Início (P1-P2, n=56) vs. Fim (P6-P8, n=27)}
+\scriptsize
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Horizonte} & \textbf{Med. (início)} & \textbf{Med. (fim)} & \textbf{U} & \textbf{p-valor} \\
+\midrule
+Pós-formatura & R\$ 6.500 & R\$ 6.500 & 619 & 0,4666 \\
+5 anos & R\$ 15.000 & R\$ 15.000 & 682 & 0,6318 \\
+10 anos & R\$ 22.000 & R\$ 22.000 & 740 & 0,8843 \\
+\bottomrule
+\end{tabular}
+\end{block}
+
+\begin{exampleblock}{Resultado}
+\textbf{Nenhuma diferença significativa.}\\
+A experiência acadêmica acumulada ao longo do curso \textbf{não altera} a percepção sobre o retorno financeiro esperado.
+\end{exampleblock}
+\end{frame}
+
+% ============================================================
+\section{Planos de Carreira}
+% ============================================================
+
+\begin{frame}{Intenção de Carreira (RQ12)}
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{lrr}
+\toprule
+\textbf{Destino} & \textbf{n} & \textbf{\%} \\
+\midrule
+Mercado privado no exterior & 48 & \textbf{48,5\%} \\
+Empreender & 22 & 22,2\% \\
+Indefinido & 14 & 14,1\% \\
+Mercado privado no Brasil & 8 & 8,1\% \\
+Concurso público & 4 & 4,0\% \\
+Carreira acadêmica & 3 & 3,0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{alertblock}{Destaque}
+\textbf{Quase metade} (48,5\%) pretende trabalhar no exterior.\\
+Somado a empreender (22,2\%), \textbf{70,7\%} planeja trajetórias não tradicionais.\\
+Apenas 8,1\% aponta o mercado brasileiro como destino principal.
+\end{alertblock}
+
+% [GRÁFICO: Bar chart horizontal de intenção de carreira]
+\end{frame}
+
+\begin{frame}{Carreira $\times$ Período (RQ12)}
+\begin{block}{Teste Qui-Quadrado}
+$\chi^2 = 14,04$, $p = 0,1713$, $gl = 10$
+\end{block}
+
+\begin{exampleblock}{Resultado}
+\textbf{Sem associação significativa} entre grupo de período e intenção de carreira.\\
+A distribuição de preferências é \textbf{homogênea} ao longo do curso.\\
+A aspiração de ir para o exterior, por exemplo, não aumenta nem diminui com a progressão acadêmica.
+\end{exampleblock}
+
+% [GRÁFICO: Stacked bar chart 100% de carreira por período]
+\textit{$\rightarrow$ Gráfico: Stacked bar 100\% (Dashboard - Expectativas e Carreira)}
+\end{frame}
+
+% ============================================================
+\section{Síntese Estatística}
+% ============================================================
+
+\begin{frame}{Resumo dos Testes Estatísticos}
+\scriptsize
+\begin{table}[h]
+\centering
+\begin{tabular}{llrrl}
+\toprule
+\textbf{Teste} & \textbf{Variáveis} & \textbf{Resultado} & \textbf{p} & \textbf{Sig.} \\
+\midrule
+Spearman & Período $\times$ Linguagens & $\rho = 0,361$ & 0,0002 & \textcolor{green!60!black}{\textbf{Sim}} \\
+Spearman & Inglês $\times$ Salário & $\rho = 0,031$ & 0,8407 & \textcolor{red}{\textbf{Não}} \\
+Spearman & Período $\times$ Nível Prof. & $\rho = 0,714$ & $<$0,0001 & \textcolor{green!60!black}{\textbf{Sim}} \\
+Mann-Whitney & Expectativa: trab. vs não & - & $>$0,31 & \textcolor{red}{\textbf{Não}} \\
+Mann-Whitney & Expectativa: início vs fim & - & $>$0,46 & \textcolor{red}{\textbf{Não}} \\
+Qui-Quadrado & Carreira $\times$ Período & $\chi^2=14,04$ & 0,1713 & \textcolor{red}{\textbf{Não}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\normalsize
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{exampleblock}{Confirmadas (2/6)}
+\begin{itemize}
+    \item Repertório cresce com o curso
+    \item Nível profissional acompanha o período
+\end{itemize}
+\end{exampleblock}
+
+\column{0.48\textwidth}
+\begin{alertblock}{Refutadas (4/6)}
+\begin{itemize}
+    \item Inglês $\neq$ salário (nesta amostra)
+    \item Trabalhar $\neq$ expectativa
+    \item Período $\neq$ expectativa
+    \item Período $\neq$ intenção de carreira
+\end{itemize}
+\end{alertblock}
+\end{columns}
+\end{frame}
+
+% ============================================================
+\section{Conclusões}
+% ============================================================
+
+\begin{frame}{Principais Insights - Status Atual}
+\begin{enumerate}
+    \item \textbf{Irregularidade é norma a partir do P3.} O salto de 2\% (P1) para 75\% (P3) indica problema estrutural no fluxo curricular.
+
+    \item \textbf{Python é a linguagem dominante} (76,8\%), seguida de JavaScript (57,6\%) e Java (24,2\%).
+
+    \item \textbf{IA é universalmente adotada} (99\%). Claude lidera sobre ChatGPT.
+
+    \item \textbf{49,5\% já trabalham na área}, com concentração em Full Stack e Backend.
+
+    \item \textbf{Computabilidade é a disciplina mais polarizante}: a mais difícil E a menos interessante. Já Intro. à Algoritmos é difícil mas a mais relevante.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Principais Insights - Tendências Futuras}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item \textbf{48,5\% querem ir para o exterior} - dado expressivo que reflete a globalização da carreira de TI.
+
+    \item \textbf{72,7\% esperam ganhar $>$ R\$ 18.000 em 10 anos} - ambicioso mas coerente com o mercado sênior.
+
+    \item \textbf{A experiência não calibra expectativas}: quem trabalha e quem não trabalha esperam o mesmo.
+
+    \item \textbf{Período acadêmico é o melhor preditor de nível profissional} ($\rho = 0,714$) - o curso se traduz diretamente em carreira.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Limitações}
+\begin{itemize}
+    \item \textbf{Amostra concentrada:} 56,6\% dos respondentes estão em P1-P2.
+    \item \textbf{Autoavaliação:} Nível de inglês e competência em linguagens são autodeclarados.
+    \item \textbf{Corte transversal:} Dados de um único momento (junho/2026).
+    \item \textbf{N = 99:} Suficiente para estatística descritiva, mas limita o poder de testes em subgrupos menores.
+\end{itemize}
+
+\begin{block}{Trabalhos Futuros}
+\begin{itemize}
+    \item Repetir o survey semestralmente para análise longitudinal.
+    \item Cruzar com desempenho acadêmico real (notas).
+    \item Ampliar para outros cursos de TI da PUC Minas.
+    \item Investigar relação entre uso de IA e desempenho.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\centering
+\Huge Obrigado!\\[1cm]
+\normalsize
+\textbf{Dashboard:} \url{https://questionariomedicao.vercel.app}\\[0.3cm]
+\textbf{Repositório:} \url{https://github.com/LeandroNani/questionarioMedicao}
+\end{frame}
+
+\end{document}

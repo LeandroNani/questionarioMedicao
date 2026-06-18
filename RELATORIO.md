@@ -5,7 +5,7 @@
 **Semestre:** 2026/1  
 **Autores:** [Nomes dos integrantes do grupo]
 
----
+--
 
 ## 1. Introdução
 
@@ -26,7 +26,7 @@ Este trabalho apresenta os resultados de um survey aplicado aos estudantes do cu
 As seguintes perguntas de pesquisa guiaram a análise:
 
 | ID | Research Question |
-|---|---|
+|--|--|
 | RQ1 | Como se distribui a amostra por período, turno e situação acadêmica? |
 | RQ2 | A partir de qual período a irregularidade se torna predominante? |
 | RQ3 | Quais disciplinas são percebidas como mais difíceis, menos interessantes e mais relevantes? |
@@ -40,14 +40,14 @@ As seguintes perguntas de pesquisa guiaram a análise:
 | RQ11 | Alunos do início do curso têm expectativas diferentes dos do final? |
 | RQ12 | Qual destino profissional é o mais desejado? |
 
----
+--
 
 ## 2. Caracterização da Amostra (RQ1)
 
 ### 2.1 Visão Geral
 
 | Métrica | Valor |
-|---|---|
+|--|--|
 | Total de respondentes | 90 |
 | Turno Manhã | 52 (57,8%) |
 | Turno Noite | 38 (42,2%) |
@@ -57,7 +57,7 @@ As seguintes perguntas de pesquisa guiaram a análise:
 ### 2.2 Distribuição por Período
 
 | Período | n | % do total |
-|---|---|---|
+|--|--|--|
 | P1 | 39 | 43,3% |
 | P2 | 10 | 11,1% |
 | P3 | 4 | 4,4% |
@@ -75,14 +75,14 @@ A amostra concentra-se nos extremos do curso: 54,4% estão no início (P1-P2) e 
 
 A maioria dos respondentes (47,8%) ingressou em 2026, seguida por 25,6% em 2023 e 11,1% em 2025. Alunos de coortes anteriores (2019-2022) somam apenas 7,8%, indicando que a base é predominantemente composta por calouros recentes e alunos de meio de curso.
 
----
+--
 
 ## 3. Regularidade Acadêmica (RQ2)
 
 ### 3.1 Evolução da Irregularidade por Período
 
 | Período | Total | Irregulares | % Irregular |
-|---|---|---|---|
+|--|--|--|--|
 | P1 | 39 | 1 | 3% |
 | P2 | 10 | 3 | 30% |
 | P3 | 4 | 3 | 75% |
@@ -103,7 +103,7 @@ A irregularidade apresenta um **salto abrupto entre P1 e P2**: de apenas 3% para
 
 **Insight principal:** A progressão curricular impõe um gargalo a partir do P2, e a irregularidade se consolida como norma a partir do P3. Estratégias de apoio pedagógico deveriam focar nos períodos P2-P3 para evitar o acúmulo em cascata.
 
----
+--
 
 ## 4. Percepção Curricular (RQ3, RQ4)
 
@@ -112,7 +112,7 @@ A irregularidade apresenta um **salto abrupto entre P1 e P2**: de apenas 3% para
 Ranking ponderado (1ª opção = 3pts, 2ª = 2pts, 3ª = 1pt):
 
 | # | Disciplina | Score |
-|---|---|---|
+|--|--|--|
 | 1 | Computabilidade | 95 |
 | 2 | Introdução à Algoritmos | 88 |
 | 3 | Fund. Projeto e Análise de Algoritmos (FPAA) | 74 |
@@ -131,7 +131,7 @@ As disciplinas com foco em **fundamentos teóricos e algorítmicos** dominam o r
 ### 4.2 Disciplinas Menos Interessantes
 
 | # | Disciplina | Score |
-|---|---|---|
+|--|--|--|
 | 1 | Computabilidade | 44 |
 | 1 | Introdução à Computação | 44 |
 | 3 | Desenvolvimento de Interfaces Web | 32 |
@@ -147,7 +147,7 @@ Aqui há uma mistura: disciplinas teóricas (Computabilidade) aparecem ao lado d
 ### 4.3 Disciplinas Mais Relevantes
 
 | # | Disciplina | Score |
-|---|---|---|
+|--|--|--|
 | 1 | Introdução à Algoritmos | 87 |
 | 2 | Fundamentos de Engenharia de Software | 55 |
 | 3 | AEDS II | 32 |
@@ -175,14 +175,14 @@ Introdução à Algoritmos é percebida simultaneamente como a **2ª mais difíc
 
 **Insight:** A sobreposição parcial sugere que dificuldade e desinteresse são categorias **parcialmente correlacionadas, mas não idênticas**. Computabilidade, por exemplo, é ao mesmo tempo a mais difícil e a mais desinteressante. Porém, disciplinas como FPAA e AEDS II são consideradas difíceis mas *não* desinteressantes - indicando que os alunos as percebem como desafiadoras mas valiosas.
 
----
+--
 
 ## 5. Ferramentas de IA (RQ5)
 
 ### 5.1 Adoção
 
 | Ferramenta | n | % |
-|---|---|---|
+|--|--|--|
 | Claude | 35 | 38,9% |
 | ChatGPT | 27 | 30,0% |
 | Gemini | 23 | 25,6% |
@@ -196,14 +196,14 @@ Introdução à Algoritmos é percebida simultaneamente como a **2ª mais difíc
 
 **Insight:** A adoção de IA é praticamente universal entre os estudantes. A liderança do Claude é um dado relevante considerando que o ChatGPT historicamente dominou o mercado - pode indicar uma tendência emergente entre desenvolvedores.
 
----
+--
 
 ## 6. Linguagens de Programação (RQ6)
 
 ### 6.1 Linguagens Utilizadas Atualmente
 
 | Linguagem | Menções |
-|---|---|
+|--|--|
 | Python | 68 |
 | JavaScript | 54 |
 | Java | 23 |
@@ -219,7 +219,7 @@ Introdução à Algoritmos é percebida simultaneamente como a **2ª mais difíc
 ### 6.2 Linguagens Confortáveis
 
 | Linguagem | Menções |
-|---|---|
+|--|--|
 | Python | 66 |
 | JavaScript | 37 |
 | Java | 19 |
@@ -237,7 +237,7 @@ Python domina ambas as listas como a linguagem mais usada (68 menções) e mais 
 ### 6.3 Repertório Cresce com o Curso?
 
 | Métrica | Valor |
-|---|---|
+|--|--|
 | Média de linguagens confortáveis | 2,00 |
 | Mediana | 2,0 |
 
@@ -247,14 +247,14 @@ Python domina ambas as listas como a linguagem mais usada (68 menções) e mais 
 
 **Resultado:** Correlação **moderada positiva e estatisticamente significativa** entre período cursado e número de linguagens confortáveis. Estudantes em períodos mais avançados tendem a ter um repertório tecnológico mais amplo - o que é esperado e valida que o currículo cumpre seu papel de expandir o domínio técnico.
 
----
+--
 
 ## 7. Nível de Inglês (RQ7)
 
 ### 7.1 Distribuição
 
 | Nível | n | % |
-|---|---|---|
+|--|--|--|
 | Intermediário | 31 | 34,4% |
 | Avançado | 28 | 31,1% |
 | Básico | 16 | 17,8% |
@@ -273,14 +273,14 @@ A maioria dos alunos (80%) possui nível intermediário ou superior. Apenas 2 al
 
 > **Gráfico:** Heatmap cruzando nível de inglês × nível profissional.
 
----
+--
 
 ## 8. Perfil Profissional (RQ8, RQ9)
 
 ### 8.1 Situação Profissional
 
 | Nível | n | % |
-|---|---|---|
+|--|--|--|
 | Não trabalho na área | 42 | 46,7% |
 | Estagiário | 22 | 24,4% |
 | Analista/Dev Júnior | 14 | 15,6% |
@@ -294,7 +294,7 @@ A maioria dos alunos (80%) possui nível intermediário ou superior. Apenas 2 al
 ### 8.2 Áreas de Atuação
 
 | Área | n |
-|---|---|
+|--|--|
 | Full Stack | 17 |
 | Backend | 6 |
 | Machine Learning/IA | 4 |
@@ -316,7 +316,7 @@ Full Stack é a área dominante com 35,4% dos que trabalham, seguido por Backend
 ### 8.4 Faixa Salarial Atual
 
 | Faixa | n |
-|---|---|
+|--|--|
 | R$ 2.000 – R$ 4.000 | 15 |
 | R$ 1.000 – R$ 2.000 | 13 |
 | R$ 4.000 – R$ 6.000 | 7 |
@@ -339,14 +339,14 @@ A concentração nas faixas R$1.000-R$4.000 é coerente com o perfil predominant
 - P5-P6: concentração de Estagiários e Juniores
 - P7-P8: presença de Plenos e até um Sênior
 
----
+--
 
 ## 9. Expectativas Salariais (RQ10, RQ11)
 
 ### 9.1 Três Horizontes Temporais
 
 | Faixa | Pós-formatura | 5 anos | 10 anos |
-|---|---|---|---|
+|--|--|--|--|
 | Até R$ 3.000 | 2,2% | 1,1% | - |
 | R$ 3.000 – R$ 5.000 | 27,8% | - | - |
 | R$ 5.000 – R$ 8.000 | 28,9% | 8,9% | 1,1% |
@@ -363,7 +363,7 @@ A progressão é clara: a mediana esperada sobe de **R$ 6.500** (pós-formatura)
 **Teste de Mann-Whitney U:**
 
 | Horizonte | Mediana (trabalha) | Mediana (não trabalha) | U | p-valor |
-|---|---|---|---|---|
+|--|--|--|--|--|
 | Pós-formatura | R$ 6.500 | R$ 6.500 | 1006 | 0,5611 |
 | 5 anos | R$ 15.000 | R$ 10.000 | 1094 | 0,3443 |
 | 10 anos | R$ 22.000 | R$ 22.000 | 1002 | 0,8506 |
@@ -375,21 +375,21 @@ A progressão é clara: a mediana esperada sobe de **R$ 6.500** (pós-formatura)
 **Teste de Mann-Whitney U:**
 
 | Horizonte | Mediana (P1-P2) | Mediana (P6-P8) | U | p-valor |
-|---|---|---|---|---|
+|--|--|--|--|--|
 | Pós-formatura | R$ 6.500 | R$ 6.500 | 554 | 0,7911 |
 | 5 anos | R$ 15.000 | R$ 15.000 | 588 | 0,7742 |
 | 10 anos | R$ 22.000 | R$ 22.000 | 644 | 0,6486 |
 
 **Resultado:** Nenhuma diferença significativa. Alunos do início e do fim do curso compartilham as mesmas expectativas salariais. Ou seja, a experiência acadêmica e profissional acumulada ao longo do curso **não altera significativamente** a percepção sobre o retorno financeiro esperado.
 
----
+--
 
 ## 10. Planos de Carreira (RQ12)
 
 ### 10.1 Intenção Profissional
 
 | Destino | n | % |
-|---|---|---|
+|--|--|--|
 | Mercado privado no exterior | 43 | 47,8% |
 | Empreender | 20 | 22,2% |
 | Indefinido | 12 | 13,3% |
@@ -411,12 +411,12 @@ Apenas 8,9% apontam o mercado privado brasileiro como destino principal, e somen
 
 > **Gráfico:** Stacked bar chart 100% (intenção de carreira por grupo de período).
 
----
+--
 
 ## 11. Síntese dos Resultados Estatísticos
 
 | Teste | Variáveis | Resultado | p-valor | Interpretação |
-|---|---|---|---|---|
+|--|--|--|--|--|
 | Spearman | Período × Nº linguagens | ρ = 0,349 | 0,0008 | Correlação moderada positiva ✅ |
 | Spearman | Inglês × Salário | ρ = 0,019 | 0,9018 | Sem correlação ❌ |
 | Spearman | Período × Nível profissional | ρ = 0,722 | < 0,0001 | Correlação forte positiva ✅ |
@@ -434,7 +434,7 @@ Apenas 8,9% apontam o mercado privado brasileiro como destino principal, e somen
 3. Estar no início ou no fim do curso também não muda.
 4. A intenção de carreira é independente do período.
 
----
+--
 
 ## 12. Principais Insights e Conclusões
 
@@ -460,7 +460,7 @@ Apenas 8,9% apontam o mercado privado brasileiro como destino principal, e somen
 
 9. **O período acadêmico é o melhor preditor de nível profissional** (ρ = 0,722), confirmando que a progressão no curso se traduz diretamente em progressão de carreira.
 
----
+--
 
 ## 13. Limitações
 
@@ -469,7 +469,7 @@ Apenas 8,9% apontam o mercado privado brasileiro como destino principal, e somen
 - **Corte transversal:** Os dados refletem um momento específico (junho/2026), sem comparação longitudinal.
 - **N = 90:** Amostra suficiente para estatística descritiva, mas que limita o poder de testes inferenciais em subgrupos menores.
 
----
+--
 
 ## 14. Trabalhos Futuros
 

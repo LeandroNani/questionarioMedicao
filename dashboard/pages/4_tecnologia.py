@@ -13,7 +13,7 @@ st.caption("RQ6 - Quais linguagens dominam e o repertório cresce com o curso?")
 
 st.divider()
 
-# --- IA mais usada (RQ5) ---
+# -- IA mais usada (RQ5) --
 st.subheader("Ferramenta de IA Mais Utilizada")
 
 col1, col2 = st.columns([1, 1])
@@ -27,14 +27,14 @@ with col2:
     total = len(df)
     uses_ai = len(df[df["ai_tool"] != "Não uso nenhuma"])
     st.metric("Taxa de Uso de IA", f"{uses_ai / total * 100:.0f}%", f"{uses_ai} de {total}")
-    st.markdown("---")
+    st.markdown("--")
     top3 = df["ai_tool"].value_counts().head(3)
     for i, (tool, count) in enumerate(top3.items()):
         st.metric(f"#{i+1}", tool, f"{count} respostas ({count/total*100:.0f}%)")
 
 st.divider()
 
-# --- Linguagens utilizadas (RQ6) ---
+# -- Linguagens utilizadas (RQ6) --
 st.subheader("Linguagens de Programação Utilizadas")
 
 col1, col2 = st.columns(2)
@@ -58,7 +58,7 @@ with col2:
 
 st.divider()
 
-# --- Repertório por período (RQ6 - cruzamento) ---
+# -- Repertório por período (RQ6 - cruzamento) --
 st.subheader("Repertório de Linguagens por Grupo de Período")
 
 fig = box_plot(
@@ -75,7 +75,7 @@ fig.update_layout(
 )
 st.plotly_chart(fig, use_container_width=True)
 
-# --- Spearman: período × repertório ---
+# -- Spearman: período × repertório --
 st.subheader("📊 Teste de Correlação - Período × Repertório")
 
 result = spearman_test(df["current_period"], df["n_comfortable_langs"])

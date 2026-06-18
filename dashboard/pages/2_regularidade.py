@@ -11,7 +11,7 @@ st.caption("RQ2 - A partir de qual período a irregularidade se torna predominan
 
 st.divider()
 
-# --- Stacked bar 100%: Regular vs Irregular por período ---
+# -- Stacked bar 100%: Regular vs Irregular por período --
 st.subheader("Situação Acadêmica por Período")
 
 period_order = [f"P{i}" for i in sorted(df["current_period"].unique())]
@@ -30,7 +30,7 @@ fig = stacked_bar_100(
 fig.update_layout(height=400)
 st.plotly_chart(fig, use_container_width=True)
 
-# --- Linha de tendência de irregularidade ---
+# -- Linha de tendência de irregularidade --
 st.subheader("Evolução da Taxa de Irregularidade por Período")
 
 periods_sorted = sorted(df["current_period"].unique())
@@ -50,7 +50,7 @@ fig = line_chart(
 fig.update_layout(height=380)
 st.plotly_chart(fig, use_container_width=True)
 
-# --- Análise textual ---
+# -- Análise textual --
 max_irreg_period = periods_sorted[irreg_rates.index(max(irreg_rates))]
 max_irreg_rate = max(irreg_rates)
 
@@ -76,7 +76,7 @@ if first_majority:
 else:
     col2.metric("Irregularidade Expressiva a partir de", "-")
 
-# --- Tabela detalhada ---
+# -- Tabela detalhada --
 st.subheader("Dados Detalhados")
 detail = pd.DataFrame({
     "Período": [f"P{int(p)}" for p in periods_sorted],

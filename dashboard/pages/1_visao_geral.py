@@ -11,7 +11,7 @@ st.caption("RQ1 - Como se distribui a amostra por período, turno e situação a
 
 st.divider()
 
-# --- KPI Cards ---
+# -- KPI Cards --
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total de Respostas", len(df))
 col2.metric("☀️ Manhã", len(df[df["shift"] == "Manhã"]))
@@ -20,7 +20,7 @@ col4.metric("✅ Regulares", f"{len(df[df['academic_status'] == 'Regular'])}/{le
 
 st.divider()
 
-# --- Respondentes por Período ---
+# -- Respondentes por Período --
 col_left, col_right = st.columns(2)
 
 with col_left:
@@ -37,7 +37,7 @@ with col_right:
     fig.update_layout(height=450)
     st.plotly_chart(fig, use_container_width=True)
 
-# --- Tabela resumo ---
+# -- Tabela resumo --
 st.subheader("Resumo por Período")
 summary = (
     df.groupby("current_period")

@@ -24,7 +24,7 @@ st.caption("RQ9 - Existe correlação entre período acadêmico e nível profiss
 
 st.divider()
 
-# --- Nível Profissional (RQ8) ---
+# -- Nível Profissional (RQ8) --
 st.subheader("Nível Profissional")
 
 col1, col2 = st.columns([1, 1])
@@ -46,7 +46,7 @@ with col2:
 
 st.divider()
 
-# --- Quem trabalha na área: detalhes ---
+# -- Quem trabalha na área: detalhes --
 df_workers = df[df["professional_level"] != "Não trabalho na área"].copy()
 
 if len(df_workers) > 0:
@@ -98,7 +98,7 @@ if len(df_workers) > 0:
 
 st.divider()
 
-# --- Nível de Inglês (RQ7) ---
+# -- Nível de Inglês (RQ7) --
 st.subheader("Nível de Inglês")
 
 col1, col2 = st.columns(2)
@@ -126,7 +126,7 @@ with col2:
         fig.update_layout(height=350)
         st.plotly_chart(fig, use_container_width=True)
 
-# --- Spearman: inglês × salário (RQ7) ---
+# -- Spearman: inglês × salário (RQ7) --
 st.subheader("📊 Correlação - Inglês × Salário Atual")
 
 df_salary_test = df_workers.copy()
@@ -146,7 +146,7 @@ else:
 
 st.divider()
 
-# --- Spearman: período × nível profissional (RQ9) ---
+# -- Spearman: período × nível profissional (RQ9) --
 st.subheader("📊 Correlação - Período Acadêmico × Nível Profissional")
 
 df_prof_test = df.copy()

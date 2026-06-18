@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+import streamlit as st
 from pathlib import Path
 
 
@@ -17,10 +18,25 @@ def _parse_json_col(val):
     return []
 
 
+def _find_json_path() -> Path:
+    base = Path(__file__).resolve().parent.parent.parent / "respostas_rows.json"
+    if base.exists():
+        return base
+    alt = Path.cwd().parent / "respostas_rows.json"
+    if alt.exists():
+        return alt
+    alt2 = Path.cwd() / "respostas_rows.json"
+    if alt2.exists():
+        return alt2
+    raise FileNotFoundError(f"respostas_rows.json not found. Tried: {base}, {alt}, {alt2}")
+
+
+@st.cache_data
 def load_data() -> pd.DataFrame:
-    json_path = Path(__file__).resolve().parent.parent.parent / "respostas_rows.json"
+    json_path = _find_json_path()
     with open(json_path, encoding="utf-8") as f:
         raw = json.load(f)
+
 
     df = pd.DataFrame(raw)
 

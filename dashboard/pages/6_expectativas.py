@@ -20,7 +20,7 @@ st.caption("RQ12 - Qual destino profissional é mais desejado?")
 
 st.divider()
 
-# --- Expectativas Salariais (3 horizontes) ---
+# -- Expectativas Salariais (3 horizontes) --
 st.subheader("Expectativas Salariais - 3 Horizontes")
 
 salary_cols = {
@@ -52,7 +52,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
-# --- Mann-Whitney: trabalha vs não trabalha (RQ10) ---
+# -- Mann-Whitney: trabalha vs não trabalha (RQ10) --
 st.subheader("📊 Trabalha na Área × Expectativa Salarial")
 
 df_test = df.copy()
@@ -79,7 +79,7 @@ for tab, (col, label) in zip(tabs, salary_cols.items()):
 
 st.divider()
 
-# --- Início vs Fim do curso (RQ11) ---
+# -- Início vs Fim do curso (RQ11) --
 st.subheader("📊 Início vs. Fim do Curso - Expectativa Salarial")
 
 df_inicio = df[df["period_group"] == "Início (P1-P2)"].copy()
@@ -102,7 +102,7 @@ for tab, (col, label) in zip(tabs, salary_cols.items()):
 
 st.divider()
 
-# --- Intenção de Carreira (RQ12) ---
+# -- Intenção de Carreira (RQ12) --
 st.subheader("Intenção de Carreira Pós-Formatura")
 
 col1, col2 = st.columns([1, 1])
@@ -125,7 +125,7 @@ with col2:
     st.metric("Empreender", f"{empreender / total * 100:.0f}%", f"{empreender} de {total}")
     st.metric("Indefinidos", f"{indefinido / total * 100:.0f}%", f"{indefinido} de {total}")
 
-# --- Carreira × Período (Chi²) ---
+# -- Carreira × Período (Chi²) --
 st.divider()
 st.subheader("📊 Intenção de Carreira × Grupo de Período")
 

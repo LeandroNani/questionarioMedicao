@@ -12,7 +12,7 @@ st.caption("RQ4 - Existe sobreposição entre disciplinas difíceis e desinteres
 
 st.divider()
 
-# --- Filtro por grupo de período ---
+# -- Filtro por grupo de período --
 period_filter = st.selectbox(
     "Filtrar por grupo de período:",
     ["Todos"] + PERIOD_GROUP_ORDER,
@@ -26,7 +26,7 @@ else:
 
 st.info(f"Mostrando dados de **{len(df_filtered)}** respondentes.")
 
-# --- Word Clouds ---
+# -- Word Clouds --
 st.subheader("Nuvens de Palavras - Disciplinas")
 
 col1, col2, col3 = st.columns(3)
@@ -60,7 +60,7 @@ with col3:
 
 st.divider()
 
-# --- Rankings Ponderados (3-2-1) ---
+# -- Rankings Ponderados (3-2-1) --
 st.subheader("Rankings Ponderados (1ª opção = 3pts, 2ª = 2pts, 3ª = 1pt)")
 
 tab1, tab2, tab3 = st.tabs(["🔴 Mais Difíceis", "🟡 Menos Interessantes", "🟢 Mais Relevantes"])
@@ -89,7 +89,7 @@ with tab3:
         fig.update_layout(height=400)
         st.plotly_chart(fig, use_container_width=True)
 
-# --- Sobreposição Difíceis x Desinteressantes (RQ4) ---
+# -- Sobreposição Difíceis x Desinteressantes (RQ4) --
 st.divider()
 st.subheader("Sobreposição: Difíceis × Desinteressantes")
 
