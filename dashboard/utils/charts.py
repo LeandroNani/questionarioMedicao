@@ -179,9 +179,9 @@ def box_plot(
 
 def dark_colormap(base_name: str, start: float = 0.35, end: float = 0.85):
     from matplotlib.colors import LinearSegmentedColormap
-    import matplotlib.cm as cm
+    import matplotlib
     import numpy as np
-    base = cm.get_cmap(base_name)
+    base = matplotlib.colormaps[base_name]
     colors = base(np.linspace(start, end, 256))
     return LinearSegmentedColormap.from_list(f"dark_{base_name}", colors)
 
