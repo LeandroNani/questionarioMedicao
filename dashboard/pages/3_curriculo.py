@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from data.loader import load_data
-from utils.charts import generate_wordcloud, explode_subjects, horizontal_bar
+from utils.charts import generate_wordcloud, dark_colormap, explode_subjects, horizontal_bar
 from utils.constants import PERIOD_GROUP_ORDER, PALETTE_CATEGORICAL
 
 df = load_data()
@@ -26,37 +26,37 @@ else:
 
 st.info(f"Mostrando dados de **{len(df_filtered)}** respondentes.")
 
-# -- Word Clouds --
+# -- Word Clouds (vertical, full-width) --
 st.subheader("Nuvens de Palavras - Disciplinas")
 
-col1, col2, col3 = st.columns(3)
+CM_HARD = dark_colormap("Reds", 0.4, 0.85)
+CM_BORING = dark_colormap("YlOrBr", 0.4, 0.85)
+CM_RELEVANT = dark_colormap("Greens", 0.4, 0.85)
 
-with col1:
-    st.markdown("#### 🔴 Mais Difíceis")
-    freq_hard = explode_subjects(df_filtered, "hardest_subject_")
-    if freq_hard:
-        buf = generate_wordcloud(dict(freq_hard), "")
-        st.image(buf, use_container_width=True)
-    else:
-        st.warning("Sem dados suficientes.")
+freq_hard = explode_subjects(df_filtered, "hardest_subject_")
+freq_boring = explode_subjects(df_filtered, "least_interesting_subject_")
+freq_relevant = explode_subjects(df_filtered, "most_relevant_subject_")
 
-with col2:
-    st.markdown("#### 🟡 Menos Interessantes")
-    freq_boring = explode_subjects(df_filtered, "least_interesting_subject_")
-    if freq_boring:
-        buf = generate_wordcloud(dict(freq_boring), "")
-        st.image(buf, use_container_width=True)
-    else:
-        st.warning("Sem dados suficientes.")
+st.markdown("#### 🔴 Mais Difíceis")
+if freq_hard:
+    buf = generate_wordcloud(dict(freq_hard), "", colormap=CM_HARD)
+    st.image(buf, use_container_width=True)
+else:
+    st.warning("Sem dados suficientes.")
 
-with col3:
-    st.markdown("#### 🟢 Mais Relevantes")
-    freq_relevant = explode_subjects(df_filtered, "most_relevant_subject_")
-    if freq_relevant:
-        buf = generate_wordcloud(dict(freq_relevant), "")
-        st.image(buf, use_container_width=True)
-    else:
-        st.warning("Sem dados suficientes.")
+st.markdown("#### 🟡 Menos Interessantes")
+if freq_boring:
+    buf = generate_wordcloud(dict(freq_boring), "", colormap=CM_BORING)
+    st.image(buf, use_container_width=True)
+else:
+    st.warning("Sem dados suficientes.")
+
+st.markdown("#### 🟢 Mais Relevantes")
+if freq_relevant:
+    buf = generate_wordcloud(dict(freq_relevant), "", colormap=CM_RELEVANT)
+    st.image(buf, use_container_width=True)
+else:
+    st.warning("Sem dados suficientes.")
 
 st.divider()
 

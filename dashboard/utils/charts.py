@@ -177,19 +177,29 @@ def box_plot(
     return apply_defaults(fig, title)
 
 
-def generate_wordcloud(word_freq: dict, title: str = "") -> BytesIO:
+def dark_colormap(base_name: str, start: float = 0.35, end: float = 0.85):
+    from matplotlib.colors import LinearSegmentedColormap
+    import matplotlib.cm as cm
+    import numpy as np
+    base = cm.get_cmap(base_name)
+    colors = base(np.linspace(start, end, 256))
+    return LinearSegmentedColormap.from_list(f"dark_{base_name}", colors)
+
+
+def generate_wordcloud(word_freq: dict, title: str = "", colormap="Dark2") -> BytesIO:
     wc = WordCloud(
-        width=800,
-        height=400,
+        width=1200,
+        height=500,
         background_color="white",
-        colormap="Blues",
-        max_words=50,
-        prefer_horizontal=0.7,
-        min_font_size=10,
+        colormap=colormap,
+        max_words=40,
+        prefer_horizontal=0.8,
+        min_font_size=14,
+        relative_scaling=0.5,
     ).generate_from_frequencies(word_freq)
 
     buf = BytesIO()
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(14, 6))
     ax.imshow(wc, interpolation="bilinear")
     ax.axis("off")
     if title:
