@@ -31,7 +31,7 @@
 % ==================== METADADOS ====================
 \title[Survey - Eng. Software PUC Minas]{Perfil Acadêmico, Tecnológico e Profissional\\dos Estudantes de Engenharia de Software}
 \subtitle{Survey - Medição e Experimentação}
-\author[Leandro \& Grupo]{Leandro Nani e Grupo}
+\author[Pacheco et al.]{Leandro Pacheco \and Lucas Maia \and Andre Cota \and Pedro Lambert \and Jhonatan Gutemberg}
 \institute[PUC Minas]{Pontifícia Universidade Católica de Minas Gerais\\Departamento de Engenharia de Software}
 \date{Junho 2026}
 
@@ -138,8 +138,10 @@ RQ12 & Qual destino profissional é o mais desejado? \\
 \end{columns}
 
 \vspace{0.3cm}
-% [GRÁFICO: Inserir donut chart de respondentes por período]
-\textit{$\rightarrow$ Gráfico: Donut chart de respondentes por período (Dashboard - Visão Geral)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{respondentes_periodo.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Distribuição por Período}
@@ -192,8 +194,10 @@ P8 & 1 & 1 & 0 & \cellcolor{green!20}0\% \\
 \end{tabular}
 \end{table}
 
-% [GRÁFICO: Inserir stacked bar chart 100% + linha de tendência]
-\textit{$\rightarrow$ Gráficos: Stacked bar 100\% e Linha de tendência (Dashboard - Regularidade)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{regularidade_fluxo.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Análise da Irregularidade (RQ2)}
@@ -242,7 +246,10 @@ Ranking ponderado: 1ª opção = 3pts, 2ª = 2pts, 3ª = 1pt.
 
 As 4 primeiras posições são de \textbf{algoritmos e teoria da computação}.
 
-% [GRÁFICO: Word Cloud + Bar Chart das disciplinas difíceis]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{disciplinas_dificeis.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Disciplinas Menos Interessantes e Mais Relevantes (RQ3)}
@@ -303,7 +310,10 @@ Computabilidade & 29 \\
 A sobreposição é \textbf{parcial}, indicando que dificuldade e desinteresse são categorias \textbf{correlacionadas mas não idênticas}. Disciplinas como FPAA e AEDS II são difíceis mas \textit{não} desinteressantes - os alunos as percebem como desafiadoras mas valiosas.
 \end{block}
 
-% [GRÁFICO: Diagrama de sobreposição em 3 colunas]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{sobreposicao.png}
+\end{figure}
 \end{frame}
 
 % ============================================================
@@ -340,7 +350,10 @@ Não uso & 1 & 1,0\% \\
 \end{block}
 \end{columns}
 
-% [GRÁFICO: Donut chart de IA]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{uso_ia.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Linguagens de Programação (RQ6)}
@@ -406,8 +419,10 @@ Correlação \textbf{moderada positiva} e \textbf{estatisticamente significativa
 Estudantes em períodos mais avançados tendem a ter um repertório tecnológico mais amplo.
 \end{exampleblock}
 
-% [GRÁFICO: Box plot de nº de linguagens confortáveis por grupo de período]
-\textit{$\rightarrow$ Gráfico: Box plot do repertório por período (Dashboard - Tecnologia)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{repertorio_linguagens.png}
+\end{figure}
 \end{frame}
 
 % ============================================================
@@ -453,7 +468,10 @@ Dados/Data Science & 2 \\
 \vspace{0.2cm}
 \textbf{Full Stack} domina com 34,7\% dos que trabalham. Machine Learning/IA já é a 3ª área.
 
-% [GRÁFICO: Treemap de áreas de atuação]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{areas_atuacao.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Nível de Inglês (RQ7)}
@@ -507,7 +525,10 @@ A progressão acadêmica está \textbf{fortemente alinhada} com a progressão de
     \item P7-P8: presença de Plenos e Sêniores
 \end{itemize}
 
-% [GRÁFICO: Heatmap período × nível profissional]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{heatmap_periodo_nivel.png}
+\end{figure}
 \end{frame}
 
 % ============================================================
@@ -539,7 +560,10 @@ Pós-formatura: \textbf{R\$ 6.500} $\rightarrow$ 5 anos: \textbf{R\$ 15.000} $\r
 
 Em 10 anos, \textbf{72,7\%} esperam ganhar acima de R\$ 18.000.
 
-% [GRÁFICO: Grouped bar chart dos 3 horizontes]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{expectativa_salarial.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Trabalha vs. Não Trabalha (RQ10)}
@@ -612,7 +636,10 @@ Somado a empreender (22,2\%), \textbf{70,7\%} planeja trajetórias não tradicio
 Apenas 8,1\% aponta o mercado brasileiro como destino principal.
 \end{alertblock}
 
-% [GRÁFICO: Bar chart horizontal de intenção de carreira]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{intencao_carreira.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Carreira $\times$ Período (RQ12)}
@@ -626,8 +653,10 @@ A distribuição de preferências é \textbf{homogênea} ao longo do curso.\\
 A aspiração de ir para o exterior, por exemplo, não aumenta nem diminui com a progressão acadêmica.
 \end{exampleblock}
 
-% [GRÁFICO: Stacked bar chart 100% de carreira por período]
-\textit{$\rightarrow$ Gráfico: Stacked bar 100\% (Dashboard - Expectativas e Carreira)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{carreira_periodo.png}
+\end{figure}
 \end{frame}
 
 % ============================================================
@@ -955,10 +984,15 @@ Qui-Quadrado & Carreira $\times$ Período & $\chi^2=14,04$ & 0,1713 & \textcolor
 
 \begin{frame}{Limitações}
 \begin{itemize}
-    \item \textbf{Amostra concentrada:} 56,6\% dos respondentes estão em P1-P2.
+    \item \textbf{Amostra concentrada em P1-P2 (56,6\%)}, o que impacta diretamente:
+    \begin{itemize}
+        \item Rankings de dificuldade inflados por disciplinas do início (ex: Intro. à Algoritmos)
+        \item Proporção elevada de ``Não trabalho na área'' reflete o perfil de calouros
+        \item Repertório tecnológico aproximado ao de ingressantes (menos linguagens, menos experiência)
+    \end{itemize}
     \item \textbf{Autoavaliação:} Nível de inglês e competência em linguagens são autodeclarados.
-    \item \textbf{Corte transversal:} Dados de um único momento (junho/2026).
-    \item \textbf{N = 99:} Suficiente para estatística descritiva, mas limita o poder de testes em subgrupos menores.
+    \item \textbf{Corte transversal:} Dados de um único momento (junho/2026), sem acompanhamento longitudinal.
+    \item \textbf{N = 99:} Suficiente para estatística descritiva, mas limita o poder de testes em subgrupos menores (ex: P3 tem apenas 4 respondentes).
 \end{itemize}
 
 \begin{block}{Trabalhos Futuros}
