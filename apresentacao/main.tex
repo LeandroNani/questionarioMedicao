@@ -631,6 +631,254 @@ A aspiração de ir para o exterior, por exemplo, não aumenta nem diminui com a
 \end{frame}
 
 % ============================================================
+\section{Benchmarking: PUC Minas × Mercado Brasileiro}
+% ============================================================
+
+\begin{frame}{Contexto e Metodologia do Benchmarking}
+\begin{block}{Fonte de Referência}
+\textbf{Pesquisa Código Fonte 2024} — pesquisa.codigofonte.com.br/2024\\
+$n = 15.049$ profissionais de TI do Brasil · Coleta: fev–jun/2024
+\end{block}
+
+\begin{block}{Research Questions Comparativas}
+\scriptsize
+\begin{tabular}{cl}
+\toprule
+\textbf{ID} & \textbf{Research Question} \\
+\midrule
+RQ-C1 & A taxa de adoção de IA dos estudantes difere do mercado? \\
+RQ-C2 & A distribuição de nível de inglês é similar à do mercado? \\
+RQ-C3 & As expectativas salariais estão calibradas com o mercado? \\
+RQ-C4 & O ranking de linguagens converge com o do mercado? \\
+RQ-C5 & A intenção de ir ao exterior difere do mercado? \\
+RQ-C6 & A distribuição de áreas de atuação converge com o mercado? \\
+\bottomrule
+\end{tabular}
+\end{block}
+
+\begin{block}{Testes Utilizados}
+z-test de uma proporção · $\chi^2$ de aderência · Spearman $\rho$ entre rankings · Análise de gap descritiva
+\end{block}
+\end{frame}
+
+\begin{frame}{RQ-C1 — Adoção e Preferência de IA}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{block}{Taxa de Adoção}
+\scriptsize
+\begin{tabular}{lrr}
+\toprule
+ & \textbf{PUC Minas} & \textbf{Mercado} \\
+\midrule
+Taxa de uso de IA & \textbf{99\%} & 83,6\% \\
+\bottomrule
+\end{tabular}\\[0.3cm]
+\textbf{z-test:} $z = 4{,}13$, $p < 0{,}001$\\
+Diferença altamente significativa.
+\end{block}
+
+\begin{block}{Ferramentas (\%)}
+\scriptsize
+\begin{tabular}{lrr}
+\toprule
+\textbf{Ferramenta} & \textbf{PUC} & \textbf{Mercado} \\
+\midrule
+Claude & \textbf{38,4\%} & $\approx$0\% \\
+ChatGPT & 30,3\% & \textbf{66,7\%} \\
+Gemini & 25,3\% & 1,5\% \\
+Copilot & 3,0\% & 13,5\% \\
+\bottomrule
+\end{tabular}
+\end{block}
+
+\column{0.48\textwidth}
+\begin{alertblock}{Insights}
+\begin{itemize}
+    \item Estudantes adotam IA \textbf{15,4 p.p.} acima do mercado.
+    \item \textbf{Inversão de liderança:} Claude lidera no ambiente acadêmico; ChatGPT no mercado.
+    \item GitHub Copilot — 2ª ferramenta do mercado — é praticamente ausente entre estudantes.
+\end{itemize}
+\end{alertblock}
+\end{columns}
+\end{frame}
+
+\begin{frame}{RQ-C2 — Nível de Inglês}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{lrr}
+\toprule
+\textbf{Nível} & \textbf{PUC Minas} & \textbf{Mercado} \\
+\midrule
+Nenhum & 2,0\% & 1,9\% \\
+Básico & 18,2\% & 29,0\% \\
+Intermediário & 31,3\% & 38,9\% \\
+Avançado + Fluente & \textbf{48,5\%} & 30,2\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+\small{(``Fluente'' dos estudantes consolidado em ``Avançado'' para comparação)}
+
+\column{0.48\textwidth}
+\begin{block}{Teste $\chi^2$ de Aderência}
+$\chi^2 = 16{,}28$, $gl = 3$, $p \approx 0{,}001$\\[0.3cm]
+Distribuição \textbf{significativamente diferente} do mercado.
+\end{block}
+
+\begin{exampleblock}{Resultado}
+Estudantes têm perfil de inglês \textbf{mais avançado}: 48,5\% em nível Avançado/Fluente vs. 30,2\% no mercado. Nível Básico sub-representado (18,2\% vs. 29,0\%).
+\end{exampleblock}
+\end{columns}
+\end{frame}
+
+\begin{frame}{RQ-C3 — Expectativa Salarial × Realidade}
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Horizonte} & \textbf{Expectativa PUC} & \textbf{Salário Real 2024} & \textbf{Gap} \\
+\midrule
+Pós-formatura (Júnior) & R\$ 6.500 & R\$ 4.079 & \textcolor{red}{+59\%} \\
+5 anos (Pleno) & R\$ 15.000 & R\$ 7.850 & \textcolor{red}{+91\%} \\
+10 anos (Sênior) & R\$ 22.000 & R\$ 15.050 & \textcolor{red}{+46\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{alertblock}{Superestimação Sistemática}
+Os estudantes superestimam o salário em todos os horizontes. O gap cresce na fase Pleno (+91\%), onde se espera \textbf{o dobro} do salário real praticado.
+\end{alertblock}
+
+\begin{block}{Hipótese}
+A expectativa é formada pela percepção geral do mercado de TI (salários em dólar divulgados em redes sociais), não pela experiência direta de negociação — o que explica por que não difere entre quem trabalha e quem não trabalha (RQ10).
+\end{block}
+\end{frame}
+
+\begin{frame}{RQ-C4 — Ranking de Linguagens}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{lrrl}
+\toprule
+\textbf{Linguagem} & \textbf{PUC} & \textbf{Merc.} & \textbf{$\Delta$} \\
+\midrule
+Python & 1º & 5º & \textcolor{red}{$\uparrow$4} \\
+JavaScript & 2º & 1º & \textcolor{blue}{$\downarrow$1} \\
+Java & 3º & 3º & = \\
+TypeScript & 4º & 4º & = \\
+C\# & 5º & 2º & \textcolor{blue}{$\downarrow$3} \\
+Dart & 8º & 7º & \textcolor{blue}{$\downarrow$1} \\
+Go & 9º & 8º & \textcolor{blue}{$\downarrow$1} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\column{0.48\textwidth}
+\begin{block}{Spearman entre Rankings}
+$\rho = 0{,}50$, $p \approx 0{,}25$ (n=7)\\[0.3cm]
+Correlação moderada, \textbf{não significativa} (amostra pequena de linguagens comuns).
+\end{block}
+
+\begin{exampleblock}{Divergências Principais}
+\begin{itemize}
+    \item \textbf{Python:} 1º nos estudantes (currículo) vs. 5º no mercado
+    \item \textbf{C\#:} 2º no mercado (ecossistema .NET) vs. 5º entre estudantes
+    \item Java e TypeScript: \textbf{rank idêntico} em ambos
+\end{itemize}
+\end{exampleblock}
+\end{columns}
+\end{frame}
+
+\begin{frame}{RQ-C5 e RQ-C6 — Exterior e Áreas de Atuação}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{block}{RQ-C5 — Intenção de Ir ao Exterior}
+\scriptsize
+\begin{tabular}{lr}
+\toprule
+\textbf{Grupo} & \textbf{\%} \\
+\midrule
+PUC Minas (1ª opção de carreira) & \textbf{48,5\%} \\
+Mercado (pretende migrar em $\leq$5 anos) & 26,6\% \\
+\bottomrule
+\end{tabular}\\[0.3cm]
+\normalsize
+\textbf{z-test:} $z = 4{,}93$, $p < 0{,}001$\\
+Estudantes têm intenção quase \textbf{2× maior}.
+\end{block}
+
+\column{0.48\textwidth}
+\begin{block}{RQ-C6 — Áreas de Atuação}
+\scriptsize
+\begin{tabular}{lrr}
+\toprule
+\textbf{Área} & \textbf{PUC} & \textbf{Merc.} \\
+\midrule
+Full Stack & \textbf{34,7\%} & \textbf{34,8\%} \\
+Back-End & 14,3\% & 30,9\% \\
+Front-End & 4,1\% & 11,9\% \\
+ML / IA & \textbf{8,2\%} & $\approx$3\% \\
+\bottomrule
+\end{tabular}\\[0.2cm]
+\normalsize
+Full Stack: convergência exata.\\
+ML/IA: super-representado entre estudantes.
+\end{block}
+\end{columns}
+
+\vspace{0.3cm}
+\begin{exampleblock}{Full Stack: convergência notável}
+A proporção de Full Stack é praticamente idêntica entre estudantes (34,7\%) e o mercado nacional (34,8\%).
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Síntese do Benchmarking}
+\scriptsize
+\begin{table}[h]
+\centering
+\begin{tabular}{llrll}
+\toprule
+\textbf{RQ} & \textbf{Dimensão} & \textbf{Stat.} & \textbf{p} & \textbf{Sig.} \\
+\midrule
+RQ-C1 & Adoção de IA & $z=4{,}13$ & $<$0,001 & \textcolor{green!60!black}{\textbf{Sim}} \\
+RQ-C2 & Nível de inglês & $\chi^2=16{,}28$ & $\approx$0,001 & \textcolor{green!60!black}{\textbf{Sim}} \\
+RQ-C3 & Expectativa salarial & gap +59\% a +91\% & — & descritivo \\
+RQ-C4 & Ranking de linguagens & $\rho=0{,}50$ & 0,25 & \textcolor{red}{\textbf{Não}} \\
+RQ-C5 & Carreira no exterior & $z=4{,}93$ & $<$0,001 & \textcolor{green!60!black}{\textbf{Sim}} \\
+RQ-C6 & Áreas de atuação & gap Full Stack $\approx$0 & — & descritivo \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\normalsize
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{exampleblock}{Divergências Confirmadas}
+\begin{itemize}
+    \item IA: estudantes adotam mais e preferem Claude
+    \item Inglês: estudantes têm nível mais avançado
+    \item Carreira: muito mais interesse em ir ao exterior
+    \item Salários: expectativas sistematicamente superiores à realidade
+\end{itemize}
+\end{exampleblock}
+
+\column{0.48\textwidth}
+\begin{block}{Convergências}
+\begin{itemize}
+    \item Full Stack: proporção quase idêntica
+    \item Java e TypeScript: mesmo rank em linguagens
+    \item Inglês Avançado: percentuais próximos quando isolado
+\end{itemize}
+\end{block}
+\end{columns}
+\end{frame}
+
+% ============================================================
 \section{Síntese Estatística}
 % ============================================================
 

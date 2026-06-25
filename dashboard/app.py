@@ -24,6 +24,9 @@ pages = {
     "🚀 Carreira": [
         st.Page("pages/6_expectativas.py", title="Expectativas e Carreira", icon="🚀"),
     ],
+    "🌐 Benchmark": [
+        st.Page("pages/7_benchmark.py", title="Benchmarking vs. Mercado", icon="🌐"),
+    ],
 }
 
 nav = st.navigation(pages)
