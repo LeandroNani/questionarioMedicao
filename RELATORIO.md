@@ -464,13 +464,13 @@ Apenas 8,9% apontam o mercado privado brasileiro como destino principal, e somen
 
 ## 13. Benchmarking: Estudantes da PUC Minas × Mercado Brasileiro de TI (G7)
 
-Esta seção compara os resultados do survey interno com os dados da **Pesquisa Salarial de Programadores Brasileiros 2024 — Código Fonte** (n=15.049 profissionais; coleta: fev–jun/2024; disponível em pesquisa.codigofonte.com.br/2024). O objetivo é situar o perfil dos estudantes em relação ao mercado, identificando convergências, lacunas de expectativa e tendências emergentes.
+Esta seção compara os resultados do survey interno com os dados da **Pesquisa Salarial de Programadores Brasileiros 2024 - Código Fonte** (n=15.049 profissionais; coleta: fev–jun/2024; disponível em pesquisa.codigofonte.com.br/2024). O objetivo é situar o perfil dos estudantes em relação ao mercado, identificando convergências, lacunas de expectativa e tendências emergentes.
 
-> **Nota metodológica:** Por comparar dois surveys independentes com escalas e públicos distintos, a análise usa testes de proporção (z-test de uma amostra) e de aderência (χ²) — que não requerem acesso aos microdados da pesquisa de referência — e análise descritiva de gap para variáveis salariais.
+> **Nota metodológica:** Por comparar dois surveys independentes com escalas e públicos distintos, a análise usa testes de proporção (z-test de uma amostra) e de aderência (χ²) - que não requerem acesso aos microdados da pesquisa de referência - e análise descritiva de gap para variáveis salariais.
 
 --
 
-### RQ-C1 — A taxa de adoção de IA dos estudantes difere do mercado?
+### RQ-C1 - A taxa de adoção de IA dos estudantes difere do mercado?
 
 | | PUC Minas (2026) | Mercado Código Fonte (2024) |
 |--|--|--|
@@ -485,7 +485,7 @@ A diferença é **altamente significativa**: os estudantes adotam IA em taxa 15,
 
 --
 
-### RQ-C2 — A distribuição de nível de inglês é similar à do mercado?
+### RQ-C2 - A distribuição de nível de inglês é similar à do mercado?
 
 Para permitir a comparação, as categorias "Avançado" e "Fluente" dos estudantes foram consolidadas (a pesquisa de mercado não distingue "Fluente" como categoria separada).
 
@@ -502,7 +502,7 @@ A distribuição dos estudantes **difere significativamente** da do mercado. O p
 
 --
 
-### RQ-C3 — As expectativas salariais estão calibradas com o mercado?
+### RQ-C3 - As expectativas salariais estão calibradas com o mercado?
 
 | Horizonte | Expectativa (mediana PUC) | Salário real mercado 2024 | Gap absoluto | Gap relativo |
 |--|--|--|--|--|
@@ -512,11 +512,11 @@ A distribuição dos estudantes **difere significativamente** da do mercado. O p
 
 Os estudantes **superestimam consistentemente** os salários em todos os horizontes. O maior gap relativo ocorre no horizonte de 5 anos (+91%), onde os estudantes esperam o dobro do salário médio de um Pleno. No pós-formatura, a expectativa de R$ 6.500 está 59% acima do salário médio real de um Júnior (R$ 4.079).
 
-**Hipótese explicativa (já identificada em RQ10):** as expectativas são uniformes entre quem trabalha e quem não trabalha, e entre calouros e veteranos — sugerindo que são formadas pela percepção geral do mercado de tecnologia (amplificada pela mídia e redes sociais), não pela experiência direta de negociação salarial.
+**Hipótese explicativa (já identificada em RQ10):** as expectativas são uniformes entre quem trabalha e quem não trabalha, e entre calouros e veteranos - sugerindo que são formadas pela percepção geral do mercado de tecnologia (amplificada pela mídia e redes sociais), não pela experiência direta de negociação salarial.
 
 --
 
-### RQ-C4 — O ranking de linguagens converge com o do mercado?
+### RQ-C4 - O ranking de linguagens converge com o do mercado?
 
 | Linguagem | Rank PUC Minas | Rank Mercado | Diferença |
 |--|--|--|--|
@@ -531,14 +531,14 @@ Os estudantes **superestimam consistentemente** os salários em todos os horizon
 **Correlação de Spearman:** ρ = 0,50, p ≈ 0,25 (n=7 linguagens comuns, não significativo)
 
 O ranking é **moderadamente correlacionado** entre estudantes e mercado, mas com duas divergências notáveis:
-1. **Python** é a linguagem dominante entre estudantes (76,8% das menções) mas ocupa apenas a 5ª posição no mercado — reflexo do currículo acadêmico e da popularidade do Python para ciência de dados e automação.
+1. **Python** é a linguagem dominante entre estudantes (76,8% das menções) mas ocupa apenas a 5ª posição no mercado - reflexo do currículo acadêmico e da popularidade do Python para ciência de dados e automação.
 2. **C#** é a 2ª linguagem no mercado (impulsionada pelo ecossistema .NET corporativo) mas ocupa apenas a 5ª posição entre os estudantes.
 
-Java e TypeScript mantêm posições equivalentes em ambos os contextos — as únicas linguagens com coincidência exata de ranking.
+Java e TypeScript mantêm posições equivalentes em ambos os contextos - as únicas linguagens com coincidência exata de ranking.
 
 --
 
-### RQ-C5 — A intenção de ir para o exterior difere do mercado?
+### RQ-C5 - A intenção de ir para o exterior difere do mercado?
 
 | | PUC Minas | Mercado (Código Fonte 2024) |
 |--|--|--|
@@ -549,11 +549,11 @@ Java e TypeScript mantêm posições equivalentes em ambos os contextos — as �
 A diferença é **altamente significativa**. Os estudantes demonstram intenção de internacionalização quase o dobro da média dos profissionais no mercado. Possíveis fatores:
 - Estudantes ainda não têm vínculos empregatícios que dificultam a migração
 - A aspiração ao mercado exterior pode ser influenciada por salários em dólar/euro divulgados em redes sociais
-- O resultado é homogêneo ao longo do curso (sem diferença por período — RQ12), indicando que a aspiração é cultural, não gerada pela experiência acadêmica
+- O resultado é homogêneo ao longo do curso (sem diferença por período - RQ12), indicando que a aspiração é cultural, não gerada pela experiência acadêmica
 
 --
 
-### RQ-C6 — A distribuição de áreas de atuação converge com o mercado?
+### RQ-C6 - A distribuição de áreas de atuação converge com o mercado?
 
 | Área | PUC Minas (% dos que trabalham) | Mercado 2024 |
 |--|--|--|
@@ -564,7 +564,7 @@ A diferença é **altamente significativa**. Os estudantes demonstram intenção
 | Mobile | 2,0% | 5,6% |
 | Dados / Data Science | 4,1% | 5,0% |
 
-A distribuição em **Full Stack é praticamente idêntica** entre estudantes e mercado — uma convergência notável dado o tamanho das amostras. Back-End está sub-representado entre estudantes (14,3% vs. 30,9%), possivelmente porque vagas júnior e estágios tendem a ser categorizadas como Full Stack. A presença expressiva de Machine Learning / IA (8,2%) entre os estudantes, muito acima do mercado (~3%), reflete o interesse crescente nessa área e pode antecipar uma tendência.
+A distribuição em **Full Stack é praticamente idêntica** entre estudantes e mercado - uma convergência notável dado o tamanho das amostras. Back-End está sub-representado entre estudantes (14,3% vs. 30,9%), possivelmente porque vagas júnior e estágios tendem a ser categorizadas como Full Stack. A presença expressiva de Machine Learning / IA (8,2%) entre os estudantes, muito acima do mercado (~3%), reflete o interesse crescente nessa área e pode antecipar uma tendência.
 
 --
 

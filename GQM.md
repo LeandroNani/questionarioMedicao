@@ -247,7 +247,7 @@ Este documento cobre **6 objetivos** derivados das 6 seções do formulário.
 |--|--|--|--|
 | M7.1 | Taxa de adoção de IA: `(# usa IA / total) × 100` comparada ao baseline do mercado (83,61%) | Razão | z-test de uma proporção (H₀: p = 0,8361) |
 | M7.2 | Distribuição percentual de nível de inglês por categoria (Nenhum / Básico / Intermediário / Avançado) | Ordinal | χ² de aderência (proporções do mercado como esperadas) |
-| M7.3 | Gap salarial: `mediana(expectativa estudantes) − salário_real_mercado(nível)` por horizonte temporal | Intervalo | Análise descritiva de gap (sem teste formal — comparação entre surveys distintos) |
+| M7.3 | Gap salarial: `mediana(expectativa estudantes) − salário_real_mercado(nível)` por horizonte temporal | Intervalo | Análise descritiva de gap (sem teste formal - comparação entre surveys distintos) |
 | M7.4 | Correlação de Spearman entre o ranking de popularidade de linguagens dos estudantes e do mercado | Ordinal | Spearman ρ entre os dois rankings (linguagens comuns) |
 | M7.5 | Proporção de estudantes com intenção de trabalhar no exterior comparada ao baseline do mercado (26,58%) | Razão | z-test de uma proporção (H₀: p = 0,2658) |
 | M7.6 | Diferença percentual por área de atuação (Full Stack, Backend, Frontend, Mobile, Dados) entre estudantes e mercado | Nominal | Análise descritiva comparativa (gap percentual por categoria) |
@@ -284,12 +284,12 @@ A tabela abaixo mapeia cada questão do formulário ao seu objetivo GQM e às m�
 | 5 | Expectativa salarial 5 anos | G5 | Q5.2, Q5.4, Q5.5 | M5.2, M5.4, M5.6 |
 | 5 | Expectativa salarial 10 anos | G5 | Q5.3, Q5.4, Q5.5 | M5.3, M5.4, M5.5, M5.6 |
 | 6 | Planos de carreira pós-formatura | G6 | Q6.1–Q6.5 | M6.1–M6.5 |
-| — | Comparação com mercado (RQ-C1) | G7 | Q7.1 | M7.1 |
-| — | Comparação com mercado (RQ-C2) | G7 | Q7.2 | M7.2 |
-| — | Comparação com mercado (RQ-C3) | G7 | Q7.3 | M7.3 |
-| — | Comparação com mercado (RQ-C4) | G7 | Q7.4 | M7.4 |
-| — | Comparação com mercado (RQ-C5) | G7 | Q7.5 | M7.5 |
-| — | Comparação com mercado (RQ-C6) | G7 | Q7.6 | M7.6 |
+| - | Comparação com mercado (RQ-C1) | G7 | Q7.1 | M7.1 |
+| - | Comparação com mercado (RQ-C2) | G7 | Q7.2 | M7.2 |
+| - | Comparação com mercado (RQ-C3) | G7 | Q7.3 | M7.3 |
+| - | Comparação com mercado (RQ-C4) | G7 | Q7.4 | M7.4 |
+| - | Comparação com mercado (RQ-C5) | G7 | Q7.5 | M7.5 |
+| - | Comparação com mercado (RQ-C6) | G7 | Q7.6 | M7.6 |
 
 --
 

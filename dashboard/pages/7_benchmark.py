@@ -69,9 +69,9 @@ st.info(
 st.divider()
 
 # ══════════════════════════════════════════════════════════════════════════════
-# RQ-C1 — Adoção de IA
+# RQ-C1 - Adoção de IA
 # ══════════════════════════════════════════════════════════════════════════════
-st.subheader("🤖 RQ-C1 — Adoção e Preferência de Ferramentas de IA")
+st.subheader("🤖 RQ-C1 - Adoção e Preferência de Ferramentas de IA")
 
 total = len(df)
 uses_ai = (df["ai_tool"] != "Não uso nenhuma").sum()
@@ -116,15 +116,15 @@ st.plotly_chart(fig_ai, use_container_width=True)
 
 st.caption(
     "**Destaque:** Claude lidera entre estudantes (38,4%) mas é inexpressivo no mercado, onde ChatGPT domina com 66,7%. "
-    "O mercado ainda usa GitHub Copilot como 2ª opção (13,5%) — praticamente ausente entre os estudantes."
+    "O mercado ainda usa GitHub Copilot como 2ª opção (13,5%) - praticamente ausente entre os estudantes."
 )
 
 st.divider()
 
 # ══════════════════════════════════════════════════════════════════════════════
-# RQ-C2 — Nível de inglês
+# RQ-C2 - Nível de inglês
 # ══════════════════════════════════════════════════════════════════════════════
-st.subheader("🇬🇧 RQ-C2 — Distribuição do Nível de Inglês")
+st.subheader("🇬🇧 RQ-C2 - Distribuição do Nível de Inglês")
 
 # Estudantes: unir Avançado+Fluente para comparar com o mercado (que não tem "Fluente" separado)
 eng_counts_raw = df["english_level"].value_counts()
@@ -173,9 +173,9 @@ st.caption(
 st.divider()
 
 # ══════════════════════════════════════════════════════════════════════════════
-# RQ-C3 — Expectativa salarial × realidade do mercado
+# RQ-C3 - Expectativa salarial × realidade do mercado
 # ══════════════════════════════════════════════════════════════════════════════
-st.subheader("💰 RQ-C3 — Expectativa Salarial × Realidade do Mercado")
+st.subheader("💰 RQ-C3 - Expectativa Salarial × Realidade do Mercado")
 
 st.markdown("Comparação entre as expectativas salariais dos estudantes e os salários reais praticados pelo mercado em 2024, por nível de carreira.")
 
@@ -216,9 +216,9 @@ st.caption(
 st.divider()
 
 # ══════════════════════════════════════════════════════════════════════════════
-# RQ-C4 — Ranking de linguagens
+# RQ-C4 - Ranking de linguagens
 # ══════════════════════════════════════════════════════════════════════════════
-st.subheader("💻 RQ-C4 — Ranking de Linguagens de Programação")
+st.subheader("💻 RQ-C4 - Ranking de Linguagens de Programação")
 
 lang_counter = explode_list_col(df, "main_languages")
 lang_counter.pop("Outra", None)
@@ -285,16 +285,16 @@ st.info(result_lang["interpretation"])
 
 st.caption(
     "**Destaque:** Python é a linguagem dominante entre estudantes (76,8% das menções) mas ocupa apenas a 5ª posição no mercado. "
-    "O mercado é liderado por JavaScript e C# — reflexo da demanda por desenvolvimento web corporativo e .NET. "
+    "O mercado é liderado por JavaScript e C# - reflexo da demanda por desenvolvimento web corporativo e .NET. "
     "Java mantém a 3ª posição em ambos os contextos."
 )
 
 st.divider()
 
 # ══════════════════════════════════════════════════════════════════════════════
-# RQ-C5 — Intenção de trabalhar no exterior
+# RQ-C5 - Intenção de trabalhar no exterior
 # ══════════════════════════════════════════════════════════════════════════════
-st.subheader("✈️ RQ-C5 — Intenção de Trabalhar no Exterior")
+st.subheader("✈️ RQ-C5 - Intenção de Trabalhar no Exterior")
 
 career_abroad = (df["career_intention"] == "Mercado privado no exterior").sum()
 pct_abroad_students = career_abroad / total * 100
@@ -333,9 +333,9 @@ st.caption(
 st.divider()
 
 # ══════════════════════════════════════════════════════════════════════════════
-# RQ-C6 — Áreas de atuação
+# RQ-C6 - Áreas de atuação
 # ══════════════════════════════════════════════════════════════════════════════
-st.subheader("🗂️ RQ-C6 — Distribuição por Área de Atuação")
+st.subheader("🗂️ RQ-C6 - Distribuição por Área de Atuação")
 
 df_workers = df[df["professional_level"] != "Não trabalho na área"].copy()
 area_pct_students = df_workers["work_area"].value_counts(normalize=True).mul(100)
@@ -374,7 +374,7 @@ st.plotly_chart(fig_area, use_container_width=True)
 
 st.caption(
     "**Convergência em Full Stack:** A distribuição para Full Stack é praticamente idêntica entre estudantes (34,7%) "
-    "e mercado (34,8%) — uma convergência notável. Back-End está sub-representado entre estudantes (14,3% vs. 30,9%), "
+    "e mercado (34,8%) - uma convergência notável. Back-End está sub-representado entre estudantes (14,3% vs. 30,9%), "
     "possivelmente porque os estágios e vagas júnior tendem a ser Full Stack."
 )
 
@@ -393,4 +393,4 @@ summary = [
 ]
 st.dataframe(pd.DataFrame(summary), use_container_width=True, hide_index=True)
 
-st.caption(f"Fonte de referência: {MARKET_SOURCE} — pesquisa.codigofonte.com.br/2024")
+st.caption(f"Fonte de referência: {MARKET_SOURCE} - pesquisa.codigofonte.com.br/2024")
